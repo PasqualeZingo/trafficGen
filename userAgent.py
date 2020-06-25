@@ -3,6 +3,8 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+from numpy.random import randint
+from random import sample
 import time
 
 
@@ -13,7 +15,7 @@ class userAgent:
              'topology', 'request' , 'ssh']
     def __init__(self):
         options = Options()
-#         options.add_argument("--headless")
+        options.add_argument("--headless")
         self.browser = webdriver.Firefox(options=options)
         
     def store_page(self):
@@ -43,7 +45,7 @@ class userAgent:
     
     def get_urls_in_page(self):
 #         links = self.browser.find_elements_by_xpath("//a[@href]")bea
-        html = BeautifulSoup(self.source)
+        html = BeautifulSoup(self.source,features="html5lib")
         divs = html.findAll('div',attrs={'class':'r'})
         print(divs)
         links = [d.findAll('a') for d in divs]
