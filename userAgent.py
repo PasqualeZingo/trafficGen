@@ -35,10 +35,6 @@ class userAgent:
     def google_query(self, query):
         results_url = f"https://duckduckgo.com/html?q={query}&t=h_&ia=web"
         self.browser.get(results_url)
-        results = self.browser.find_elements_by_xpath(
-            "//div[@id='links']/div/div/div[1]"
-        )
-        print([results[i].text for i in range(len(results))])
 
     def get_page(self, url):
         self.browser.get(url)
@@ -53,17 +49,19 @@ class userAgent:
         print(query)
         self.google_query(query)
 
-    #         print(self.get_urls_in_page())
-
     def get_urls_in_page(self):
-        results = self.browser.find_elements_by_id("links")
-        num_page_items = len(results)
-        for i in range(num_page_items):
-            print(results[i].text)
-            print(len(results))
+        self.results = self.browser.find_elements_by_xpath(
+            "//div[@id='links']/div/div/div[1]"
+        )
+        print([self.results[i].text for i in range(len(self.results))])
+
+    def random_click(self):
+        self.results[randint(len(self.results))].click()
+        print(self.browser.page_source)
 
 
 # ua.close_browser()
 ua = userAgent()
 ua.random_query()
-# ua.get_urls_in_page()
+ua.get_urls_in_page()
+ua.random_click()
