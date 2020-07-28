@@ -1,6 +1,6 @@
 # trafficGen
 This is a mono repo containing everything needed to operate and develop on the virtualized network within brass.
-## Prerecs
+## Prereqs
 ### VMWare Workstation
 The UD College of Engineering provides a number of different softwares through UDeploy. Our development VM runs on VMware Workstation which can be downloaded from [UDeploy here](https://udeploy.udel.edu/software/vmware-for-university-of-delaware/)
 
