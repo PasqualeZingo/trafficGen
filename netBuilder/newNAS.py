@@ -6,23 +6,24 @@ class Startup(object):
 		self._user = user
 		self._secret = secret
 		self._ep = 'http://%s/api/v1.0' % hostname
+		print(self._ep)
 	def request(self, resource, method='GET', data=''):
 		r = requests.request(
 		method,
 		'%s/%s' % (self._ep, resource),
 		data=json.dumps(data),
-		headers={'Content-Type': "application/json"}
-		auth=(self._user, self.secret),
+		headers={'Content-Type': "application/json"},
+		auth=(self._user,self._secret)
 	)
-	if r.ok:
-		try
-			return r.json()
-		except
-			return r.text
-	raise ValueError(r)
+		if r.ok:
+			try:
+				return r.json()
+			except:
+				return r.text
+		raise ValueError(r)
 	def _get_disks(self):
 		disks = self.request('storage/disk')
-		return [disk['disk_name'] for disk in disks]
+		return disks
 	def create_pool(self):
 		disks = self._get_disks()
 		self.request('storage/volume',method='POST',data={
@@ -40,3 +41,5 @@ class Startup(object):
 			'nfs_path': 'mnt/tank/mydata',
 			'nfs_guestonly': True
 })
+St = Startup('FreeNAS.luked.com','root','toor')
+print(St._get_disks())
