@@ -29,7 +29,7 @@ The first step to setting up the server is to install the software that the serv
 The postfix and dovecot packages are used for sending mail and authentication, respectively. rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 'service rsyslog start'. Use the tail -n (no. lines) to view the latest lines of the syslog file. Telnet is used to interact with the SMTP server for testing purposes.
 
 ### Configuration
-A clean postfix installation will have to config files within its directory at /etc/postfix. You will need to replace these files with the ones in netBuilder/postfix-conf in this repo. You will also need to add the other files from netBuilder/postfix-conf to /etc/postfix. Run "git clone https://github.com/PasqualeZingo/trafficGen" to download the files, and run "mv trafficGen/* /etc/postfix" to move the files. You may wish to remove the trafficGen directory afterwards with "rm -rf trafficGen" in the interest of saving space. Here is a list of the files in netBuilder/postfix-conf and a description of their function:
+A clean postfix installation will have to config files within its directory at /etc/postfix. You will need to replace these files with the ones in netBuilder/postfix-conf in this repo. You will also need to add the other files from netBuilder/postfix-conf to /etc/postfix. Run "git clone https://github.com/PasqualeZingo/trafficGen" to download the files, and run "mv trafficGen/* /etc/postfix" to move the files. You may wish to remove the trafficGen directory afterwards with "rm -rf trafficGen" in the interest of saving space. Run the command "postmap login_maps virtual vmailbox && postfix start" to start the server for the first time. If you stop the server and wish to start it again, you can type just "postfix start". If you wish to change login_maps, virtual, or vmailbox, make your changes, run the postmap command, and then restart postfix with the command "postfix reload" (assuming postfix is running when you make the changes. If it is shut down, use "postfix start" instead.) Below there is a list of the files in netBuilder/postfix-conf and a description of their function:
 #### master.cf
 This contains the services the postfix server will run.
 
@@ -40,6 +40,12 @@ This contains the bulk of the configuration for the server. It tells postfix who
 This contains usernames followed by an indent followed by an email address. When logged in with the username on the right, the user will be able to send mail with the address on the right. The default for this example has two users, info@example.com and sales@example.com, which are mapped to addresses of the same name.
 
 #### virtual
-This defines virtual users; in the default config found in the repo, it will
+This defines virtual users; in the default config found in the repo, it will cause mail intended for postmaster@example.com to be sent to root. The address on the left is the virtual address, while the user on the right is the user on the machine that will recieve the mail.
+
+#### vmailbox
+This file contains email addresses followed by the name of a directory. Email sent to those addresses will be saved in a text file /var/mail/vhosts/<the file name on the right>. Adding a '/' after the directory causes the mail to be stored in /var/mail/vhosts/<the directory on the right>/new. 
+  
+Once you have set up postfix,
+
 
 
