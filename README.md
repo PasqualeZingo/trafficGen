@@ -29,3 +29,4 @@ The first step to setting up the server is to install the software that the serv
 The postfix and dovecot packages are used for sending mail and authentication, respectively. rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 'service rsyslog start'. Use the tail -n (no. lines) to view the latest lines of the syslog file. Telnet is used to interact with the SMTP server for testing purposes.
 
 ### Configuration
+A clean postfix installation will have to config files within its directory at /etc/postfix. They are named master.cf and main.cf. In master.cf, uncomment line 17 by removing the '#' symbol from the beginning of the line. Save your changes and open main.cf. 
