@@ -25,8 +25,17 @@ This is perhaps the most difficult of the three servers to set up and configure.
 
 ### Installation
 The first step to setting up the server is to install the software that the server will use to relay the mail, along with other basic utilities. To do this, run the following command:
-"apt-get update && apt-get install -y rsyslog telnet postfix dovecot-common dovecot-imapd dovecot-pop3d"
+"apt-get update && apt-get install -y rsyslog telnet postfix dovecot-common dovecot-imapd dovecot-pop3d git"
 The postfix and dovecot packages are used for sending mail and authentication, respectively. rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 'service rsyslog start'. Use the tail -n (no. lines) to view the latest lines of the syslog file. Telnet is used to interact with the SMTP server for testing purposes.
 
 ### Configuration
-A clean postfix installation will have to config files within its directory at /etc/postfix. They are named master.cf and main.cf. In master.cf, uncomment line 17 by removing the '#' symbol from the beginning of the line. Save your changes and open main.cf. 
+A clean postfix installation will have to config files within its directory at /etc/postfix. You will need to replace these files with the ones in netBuilder/postfix-conf in this repo. You will also need to add the other files from netBuilder/postfix-conf to /etc/postfix. Run "git clone https://github.com/PasqualeZingo/trafficGen" to download the files, and run "mv trafficGen/* /etc/postfix" to move the files. You may wish to remove the trafficGen directory afterwards with "rm -rf trafficGen" in the interest of saving space. Here is a list of the files in netBuilder/postfix-conf and a description of their function:
+#### master.cf
+This contains the services the postfix server will run.
+
+#### main.cf
+This contains the bulk of the configuration for the server. It tells postfix who to allow to send email, where to send mail, and what ip addresses can access the SMTP service. The funciton of the configuration options can be found at http://www.postfix.org/documentation.html.
+
+#### login_maps
+This contains usernames followed by an indent followed by an email address. When logged in with the username on the right, the user will be able to send mail with the address on the right. The default for this example has two users, info@example.com and sales@example.com, which are mapped to addresses of the same name.
+
