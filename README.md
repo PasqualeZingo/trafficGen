@@ -24,9 +24,8 @@ In order to generate traffic, you will need to have a virtual network with serve
 This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication.
 
 ### Installation
-The first step to setting up the server is to install the software that the server will use to relay the mail, along with other basic utilities. To do this, run the following commands:
-apt-get update
-apt-get install -y rsyslog telnet postfix dovecot-common dovecot-imapd dovecot-pop3d
+The first step to setting up the server is to install the software that the server will use to relay the mail, along with other basic utilities. To do this, run the following command:
+"apt-get update && apt-get install -y rsyslog telnet postfix dovecot-common dovecot-imapd dovecot-pop3d"
 The postfix and dovecot packages are used for sending mail and authentication, respectively. rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 'service rsyslog start'. Use the tail -n (no. lines) to view the latest lines of the syslog file. Telnet is used to interact with the SMTP server for testing purposes.
 
 ### Configuration
