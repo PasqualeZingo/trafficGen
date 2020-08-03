@@ -39,3 +39,7 @@ This contains the bulk of the configuration for the server. It tells postfix who
 #### login_maps
 This contains usernames followed by an indent followed by an email address. When logged in with the username on the right, the user will be able to send mail with the address on the right. The default for this example has two users, info@example.com and sales@example.com, which are mapped to addresses of the same name.
 
+#### virtual
+This defines virtual users; in the default config found in the repo, it will
+
+
