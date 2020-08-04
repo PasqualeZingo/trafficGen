@@ -55,13 +55,29 @@ class Star(Route):
         self.used_links = 1
         
     def node_add(self, nnodes, template):
+        ndsFile = ".%s.nodes" % self.project_id
+        try:
+                f=open(ndsFile,'x')
+                f.close()
+                f=open(ndsFile,'w')
+                f.write('0')
+                f.close()
+        except:
+                pass
         for i in range(nnodes):
             node = Node(
                 project_id=self.project_id,
                 connector=server,
                 template=template
                 )
-
+            if(template=='traffic_gen_box'):
+                 f=open(ndsFile,'r')
+                 n = int(f.read().strip())
+                 n += nnodes
+                 f.close()
+                 f=open(ndsFile,'w')
+                 f.write(str(n))
+                 f.close()
             node.create()
             lab.get()
             lab.create_link(self.switch_name, 
