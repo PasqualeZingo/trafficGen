@@ -31,7 +31,9 @@ class Route():
         self.project_id=lab.project_id
         self.router_name=self.router.name
         self.router_port = self.router.port_name_format
-        lab.create_link(self.NAT.name,self.NAT.port_name_format,self.router_name,self.router.ports[0].get("name"))
+        NandR= [dict(node_id=self.NAT.node_id,adapter_number = 0,port_number = 0),dict(node_id=self.router.node_id,adapter_number=0,port_number=0)]
+        L = Link(project_id=lab.project_id,connector=server,nodes=NandR)
+        L.create()
         self.used_links = 1
     def delete(self):
         self.router.delete()
@@ -63,7 +65,7 @@ class Star(Route):
         lab.create_link(router.router_name, 
                         router.router_port.format(router.used_links), 
                         switch.name, 
-                        switch.ports[1].get("name"))
+                        switch.ports[0].get("name"))
         router.used_links += 1
         
         self.project_id=lab.project_id
