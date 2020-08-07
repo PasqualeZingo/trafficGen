@@ -25,11 +25,14 @@ class Route():
             name=name,
             template=template
             )
-        self.router.create() 
+        self.NAT = Node(project_id=lab.project_id,connector=server,name="NAT-1",template="NAT")
+        self.router.create()
+        self.NAT.create()
         self.project_id=lab.project_id
         self.router_name=self.router.name
         self.router_port = self.router.port_name_format
-        self.used_links = 0
+        lab.create_link(self.NAT.name,self.NAT.port_name_format,self.router_name,self.router.ports[0].get("name"))
+        self.used_links = 1
     def delete(self):
         self.router.delete()
     def start(self):
@@ -60,7 +63,7 @@ class Star(Route):
         lab.create_link(router.router_name, 
                         router.router_port.format(router.used_links), 
                         switch.name, 
-                        switch.ports[0].get("name"))
+                        switch.ports[1].get("name"))
         router.used_links += 1
         
         self.project_id=lab.project_id
