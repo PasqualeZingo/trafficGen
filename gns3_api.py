@@ -73,12 +73,15 @@ class Star(Route):
         self.switch_port = switch.port_name_format
         self.used_links = 1
         
-    def node_add(self, nnodes, template):
+    def node_add(self, nnodes, template, name=None):
+        if name == None:
+           name = template
         for i in range(nnodes):
             self.Nodes.append(Node(
                 project_id=self.project_id,
                 connector=server,
-                template=template
+                template=template,
+                name=name
                 ))
             self.Nodes[len(self.Nodes) - 1].create()
             lab.get()

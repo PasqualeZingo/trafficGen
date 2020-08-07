@@ -12,11 +12,10 @@ Clear("testtest")
 pf = Route(name="pfsense", template="pfSense 2.4.5-ready-to-go")
 gp1 = Star(router=pf, name="office", template="Ethernet switch")
 gp1.node_add(nnodes=4, template="traffic_gen_box")
+gp1.node_add(nnodes=1,template="printer",name="cups_pdf")
+gp1.node_add(nnodes=1,template="studio.lrd.com",name="studio.lrd.com")
 
 pf.start()
 gp1.start()
 
-gp2 = Heterogenous(router=pf, name="single", template="sfcal-sfcal")
-
-gp2.start()
 
