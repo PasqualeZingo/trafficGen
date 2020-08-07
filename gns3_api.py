@@ -1,6 +1,6 @@
 from gns3fy import Node, Link, Gns3Connector
 import gns3fy
-
+import os
 server = Gns3Connector("http://brass.ece.udel.edu:3080")
 lab = gns3fy.Project(name="testtest", connector=server)
 lab.get()
@@ -19,22 +19,36 @@ lab.get()
 
 class Route():
     def __init__(self, name, template):
-        router = Node(
+        self.router = Node(
             project_id=lab.project_id,
             connector=server,
             name=name,
             template=template
             )
-        router.create()
-        
+        self.router.create() 
         self.project_id=lab.project_id
-        self.router_name=router.name
-        self.router_port = router.port_name_format
+        self.router_name=self.router.name
+        self.router_port = self.router.port_name_format
         self.used_links = 0
-           
-            
+    def delete(self):
+        self.router.delete()
+    def start(self):
+        self.router.start()
+    def stop(self):
+        self.router.stop()
+
+def Clear(project_name):
+     project_id = server.get_project(project_name)['project_id']
+     nodes = server.get_nodes(project_id)
+     for node in nodes:
+           nd = Node(node_id=node['node_id'],connector=server,project_id=project_id)
+           nd.delete()
+     print("%s has been cleared of all nodes!" % project_name)
+ 
+          
 class Star(Route):
     def __init__(self, router, name, template):
+        self.Nodes = []
         switch = Node(
             project_id=lab.project_id,
             connector=server,
@@ -55,56 +69,58 @@ class Star(Route):
         self.used_links = 1
         
     def node_add(self, nnodes, template):
-        ndsFile = ".%s.nodes" % self.project_id
-        try:
-                f=open(ndsFile,'x')
-                f.close()
-                f=open(ndsFile,'w')
-                f.write('0')
-                f.close()
-        except:
-                pass
         for i in range(nnodes):
-            node = Node(
+            self.Nodes.append(Node(
                 project_id=self.project_id,
                 connector=server,
                 template=template
-                )
-            if(template=='traffic_gen_box'):
-                 f=open(ndsFile,'r')
-                 n = int(f.read().strip())
-                 n += nnodes
-                 f.close()
-                 f=open(ndsFile,'w')
-                 f.write(str(n))
-                 f.close()
-            node.create()
+                ))
+            self.Nodes[len(self.Nodes) - 1].create()
             lab.get()
             lab.create_link(self.switch_name, 
                             self.switch_port.format(self.used_links), 
-                            node.name, 
-                            node.ports[0].get("name"))
+                            self.Nodes[len(self.Nodes) - 1].name, 
+                            self.Nodes[len(self.Nodes) - 1].ports[0].get("name"))
             self.used_links+=1
-            
+    def start(self):
+        for n in self.Nodes:
+            n.start()
+    def stop(self):
+        for n in self.Nodes:
+            n.stop()
+    def delete(self):
+        for n in self.Nodes:
+            n.delete()
+
 class Heterogenous(Route):
     def __init__(self, router, name, template):
-        node = Node(
+        self.Nodes = []
+        self.Nodes.append(Node(
             project_id=lab.project_id,
             connector=server,
             name=name,
             template=template
-            )
-        node.create()
+            ))
+        self.Nodes[0].create()
         lab.get()
         lab.create_link(router.router_name, 
                         router.router_port.format(router.used_links), 
-                        node.name, 
-                        node.ports[0].get("name"))
+                        self.Nodes[0].name, 
+                        self.Nodes[0].ports[0].get("name"))
+        
         router.used_links += 1
         
         self.project_id=lab.project_id
-        self.node_name=node.name
-        self.node_port = node.port_name_format
+        self.node_name=self.Nodes[0].name
+        self.node_port = self.Nodes[0].port_name_format
         self.used_links = 1
-            
+    def start(self):
+        for n in self.Nodes:
+            n.start()
+    def stop(self):
+        for n in self.Nodes:
+            n.stop()
+    def delete(self):
+        for n in self.Nodes:
+            n.delete()
 
