@@ -59,9 +59,10 @@ class userAgent:
     def random_click(self):
         self.results[randint(len(self.results))].click()
         print(self.browser.page_source)
+    def close_browser(self):
+         self.browser.close()
+         self.browser.quit()
 
-
-# ua.close_browser()
 ua = userAgent()
 ua.random_query()
 ua.get_urls_in_page()
