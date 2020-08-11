@@ -65,3 +65,21 @@ ua.random_query()
 ua.get_urls_in_page()
 ua.random_click()
 ua.close_browser()
+
+try:
+    f=open(".queries","x")
+    f.close()
+    f=open(".queries","w")
+    f.write("0")
+    f.close()
+except:
+    pass
+
+f=open(".queries","r")
+n=int(f.read().strip())
+f.close()
+f=open(".queries","w")
+n+=1
+f.write(str(n))
+f.close()
+
