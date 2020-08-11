@@ -10,7 +10,8 @@ while alive:
         time.sleep(10)
         continue
     if nxt < .5:
-        print("Call random google query")
+        #print("Call random google query")
+        /usa/lucasd/runCont/runall.sh /exe.sh
     elif nxt < .75:
         print("Call send Email")
     elif nxt < .95:
