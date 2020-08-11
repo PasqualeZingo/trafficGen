@@ -1,5 +1,6 @@
 import time
 import numpy as np
+import os
 
 alive = True
 run = True # Get from docker run signal
@@ -11,7 +12,7 @@ while alive:
         continue
     if nxt < .5:
         #print("Call random google query")
-        /usa/lucasd/runCont/runall.sh /exe.sh
+        os.system("/usa/lucasd/runCont/runall.sh /exe.sh")
     elif nxt < .75:
         print("Call send Email")
     elif nxt < .95:
