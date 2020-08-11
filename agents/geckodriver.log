@@ -1,0 +1,92 @@
+1597155615504	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTdoDpE"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597155618531	Marionette	INFO	Listening on port 35231
+1597155618614	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/scripts/satellite-5e7cce4264746d122b00213f.js, line 4: TypeError: document.body is null
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: WebGL warning: <Create>: getContext: Disallowing antialiased backbuffers due to blacklisting. (FEATURE_FAILURE_GLXTEST_FAILED)
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: WebGL warning: <Create>: getContext: Disallowing antialiased backbuffers due to blacklisting. (FEATURE_FAILURE_GLXTEST_FAILED)
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://assets.adobedtm.com/998b2d6d4944658536fe36266a249b07e626b86d/mbox-contents-ba151bac91f2b7214d881fb194e167b525fadece.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1597155630263	Marionette	INFO	Stopped listening on port 35231
+1597155728979	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGF52rT"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597155731599	Marionette	INFO	Listening on port 40807
+1597155731690	Marionette	WARN	TLS certificate errors will be ignored for this session
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1597155734102	Marionette	ERROR	[5] No reply from Marionette:Register
+1597155736420	Marionette	INFO	Stopped listening on port 40807
+1597155811862	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0OMse8"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597155814868	Marionette	INFO	Listening on port 41164
+1597155814876	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597155815928	Marionette	INFO	Stopped listening on port 41164
+1597155925562	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileCEY0qY"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597155928085	Marionette	INFO	Listening on port 43344
+1597155928191	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597155934900	Marionette	INFO	Stopped listening on port 43344
+1597155938122	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileArus33"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597155940758	Marionette	INFO	Listening on port 36842
+1597155940830	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597155941996	Marionette	INFO	Stopped listening on port 36842
+1597156025656	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileaLkd39"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156028186	Marionette	INFO	Listening on port 45713
+1597156028271	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.informaticar.net/how-to-configure-pfsense/, line 232: ReferenceError: instapaper_embed is not defined
+1597156031067	Marionette	INFO	Stopped listening on port 45713
+1597156038344	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQt5Sl9"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156040893	Marionette	INFO	Listening on port 42071
+1597156040951	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/521PoRGnh7h8BVOMyCpHrhejufpyvF5vdQBdJpCoVT0.js line 1 > Function line 3 > eval line 1 > eval, line 1: WebGL warning: <Create>: getContext: Disallowing antialiased backbuffers due to blacklisting. (FEATURE_FAILURE_GLXTEST_FAILED)
+JavaScript warning: https://pagead2.googlesyndication.com/bg/521PoRGnh7h8BVOMyCpHrhejufpyvF5vdQBdJpCoVT0.js line 1 > Function line 3 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/521PoRGnh7h8BVOMyCpHrhejufpyvF5vdQBdJpCoVT0.js line 1 > Function line 3 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1597156047225	Marionette	INFO	Stopped listening on port 42071
+JavaScript error: https://tpc.googlesyndication.com/sodar/sodar2.js, line 24: NotFoundError: Node.removeChild: The node to be removed is not a child of this node
+1597156066747	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMhjk0l"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156069110	Marionette	INFO	Listening on port 34187
+1597156069154	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597156071135	Marionette	INFO	Stopped listening on port 34187
+1597156079402	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1nelpO"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156081818	Marionette	INFO	Listening on port 43374
+1597156081911	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597156083215	Marionette	INFO	Stopped listening on port 43374
+1597156091385	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuGIuyU"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156093880	Marionette	INFO	Listening on port 40733
+1597156093898	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.geeksforgeeks.org/browser-automation-using-selenium/ line 1 > injectedScript, line 1: TypeError: e is not a function
+JavaScript error: https://cdn.adpushup.com/40792/adpushup.js, line 1: TypeError: window.adpushup.adpTags is undefined
+1597156097679	Marionette	INFO	Stopped listening on port 40733
+1597156103927	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezpvNr5"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156106503	Marionette	INFO	Listening on port 39155
+1597156106537	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597156112344	Marionette	INFO	Stopped listening on port 39155
+JavaScript error: resource:///modules/FaviconLoader.jsm, line 568: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+1597156127023	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezMIl01"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1597156129428	Marionette	INFO	Listening on port 40182
+1597156129436	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597156133297	Marionette	INFO	Stopped listening on port 40182
