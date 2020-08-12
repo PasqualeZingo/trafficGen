@@ -46,7 +46,7 @@ This defines virtual users; in the default config found in the repo, it will cau
 This file contains email addresses followed by the name of a directory. Email sent to those addresses will be saved in a text file /var/mail/vhosts/<the file name on the right>. Adding a '/' after the directory causes the mail to be stored in /var/mail/vhosts/<the directory on the right>/new. 
   
 ### Dovecot configuration
-Once you have set up postfix, you will need to configure dovecot as well. Run the command "cp /trafficGen/netBuilder/dovecot-conf/passwd /etc/dovecot && cp /trafficGen/netBulider/dovecot-conf/dovecot.conf /etc/dovecot && cp /trafficGen/netBuilder/dovecot-conf/10* /etc/dovecot/conf.d". This will copy the config files to the appropriate directories. Dovecot should not require any additional setup; simply run "service dovecot start" to start the dovecot server. The server can be connected to via the command "telnet localhost 110". Below is a list of the config files in netBuilder/dovecot-conf and their function.
+Once you have set up postfix, you will need to configure dovecot as well. Run the command "cp /trafficGen/netBuilder/dovecot-conf/passwd /etc/dovecot && cp /trafficGen/netBuilder/dovecot-conf/dovecot.conf /etc/dovecot && cp /trafficGen/netBuilder/dovecot-conf/10* /etc/dovecot/conf.d". This will copy the config files to the appropriate directories. Dovecot should not require any additional setup; simply run "service dovecot start" to start the dovecot server. The server can be connected to via the command "telnet localhost 110". Below is a list of the config files in netBuilder/dovecot-conf and their function.
 
 #### 10-auth.conf
 This file tells dovecot where to find the username and password for logging into the dovecot server.
