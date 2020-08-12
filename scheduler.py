@@ -12,13 +12,13 @@ while alive:
         continue
     if nxt < .5:
         print("Call random google query")
-        os.system("/usa/lucasd/runCont/runall.sh /.query.sh")
+        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")
     elif nxt < .75:
         print("Call send Email")
-        os.system("/usa/lucasd/runCont/runall.sh /.email.sh")
+        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.email.sh")
     elif nxt < .95:
         print("Print a dummy file")
-        os.system("/usa/lucasd/runCont/runall.sh /.print.sh")
+        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.print.sh")
     elif nxt >= 0.95:
         print("Done for now")
         alive = False
