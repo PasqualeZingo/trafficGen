@@ -11,7 +11,7 @@ while alive:
         time.sleep(10)
         continue
     if nxt < .5:
-        print("Call random google query")
+        print("Call random duckduckgo query")
         os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")
     elif nxt < .75:
         print("Call send Email")
