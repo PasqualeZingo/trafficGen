@@ -96,5 +96,5 @@ Once securityonion is set up, open kibana with the shortcut on your desktop, typ
 To add dashboards throught the API, use the add.sh script on a json file containing a dashboard object, along with associated visualizations and index patterns. A list of dashboards used for pivoting from squert can be found at github.com/Security-Onion-Solutions/securityonion-elastic.
 
 ### addall.sh
-If placed in the same directory as add.sh, this script will attempt to add all files in the current directory to kibana. Of course, adding the add.sh and addall.sh scripts themselves will fail, which will result in a couple of error messages during the process.
+If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
  
