@@ -18,7 +18,7 @@ Our VM image is hosted on google drive which can be downloaded here. #TODO inser
 * ML
 
 # Network setup
-In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, an email server, and a network-attached storage server.
+In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, and an email server.
 
 ## Email server
 This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured.
@@ -75,10 +75,8 @@ To run the scheduler, simply type the command "python3 scheduler.py". If it prin
 ## Print Server
 This is a simple print server/virtual printer setup.
 
-
 ### Installation
 First, you will need to install the software required for this server to funciton. Type the command "apt-get update && apt-get -y install cups cups-pdf avahi-daemon".
-
 
 ### Configuration
 To configure the cups-pdf printer, first you will need to copy netBuilder/cupsd.conf into /etc/cups. Next you will need to run "service dubs start", "service avahi-daemon start", and "service cups start". Next run the command "lpadmin -P '/usr/share/ppd/cups-pdf/CUPS-PDF_opt.ppd' -p VPDF -E -v "cups-pdf:/" -o printer-is-shared=true". Finally, run the following commands: "useradd -m -s /bin/bash reciever", "cupsctl --share-printers", "cupsctl --share-printers --remote-any", and finally "service cups restart". Now the print server should be operational!
