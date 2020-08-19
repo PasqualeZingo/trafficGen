@@ -12,17 +12,22 @@ while alive:
         continue
     if nxt < .5:
         print("Call random duckduckgo query")
+        #Executes userAgent.py on all traffic_gen_boxes.
         os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")
     elif nxt < .75:
         print("Call send Email")
+        #Executes emailSender.py on all traffic_gen_boxes.
         os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.email.sh")
     elif nxt < .95:
         print("Print a dummy file")
+        #Executes printFile.py on all traffic_gen_boxes.
         os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.print.sh")
     elif nxt >= 0.95:
         print("Done for now")
+        #Terminates the program.
         alive = False
     wait = np.random.exponential(scale)
     time.sleep(wait)
+    #wait an extra 10 seconds to make sure the executed script is complete before attempting to run another.
     time.sleep(10)
 
