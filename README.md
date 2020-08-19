@@ -138,10 +138,10 @@ This is a simple print server/virtual printer setup.
 ### Installation
 First, you will need to install the software required for this server to function. Type the following command to install all the prerequisites 
     
-    apt-get update && apt-get -y install cups cups-pdf avahi-daemon
+    apt-get update && apt-get -y install cups cups-pdf avahi-daemon git
 
 ### Configuration
-To configure the cups-pdf printer, first you will need to copy netBuilder/cupsd.conf into /etc/cups. Next you will need to run the following series of commands: 
+To configure the cups-pdf printer, first you will need to copy netBuilder/cupsd.conf from this repo into /etc/cups. Next you will need to run the following series of commands: 
 
     service dubs start
     service avahi-daemon start 
