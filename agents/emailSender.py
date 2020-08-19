@@ -2,7 +2,7 @@ import os #Allows using bash commands from within python.
 from base64 import b64encode #To create the base 64 auth string.
 def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->str:
 	"""
-	Sends an email from sender to target by telneting into an SMTP server. Requires the server to allow pipelining for unauthenticated users.
+	Sends an email from sender to target by telneting into an SMTP (Simple Mail Transfer Protocol) server. Requires the server to allow pipelining for unauthenticated users.
 	args:
 		sender (str): The user sending the email. Must include the domain used for the addresses on the server.
 		target (str): The intended recipient of the email. Must include the comain used for the addresses on the server.
