@@ -41,7 +41,7 @@ Run the command
     
 to allow postfix to read the files. If you wish to change login_maps, virtual, or vmailbox, make your changes, run 
 
-    postmap \<file\>"
+    postmap <file>"
 and then restart postfix with the command
     
     "postfix reload" 
