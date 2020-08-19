@@ -27,7 +27,7 @@ This is perhaps the most difficult of the three servers to set up and configure.
 The first step to setting up the server is to install the software that the server will use to relay the mail, along with other basic utilities. To do this, run the following command:
 
     apt-get update && apt-get install -y rsyslog telnet postfix dovecot-common dovecot-imapd dovecot-pop3d git
-The postfix and dovecot packages are used for sending mail and authentication, respectively. rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 'service rsyslog start'. Use the tail -n (no. lines) to view the latest lines of the syslog file. Telnet is used to interact with the Simple Mail Transfer Protocol (SMTP for short) server for testing purposes.
+The postfix and dovecot packages are used for sending mail and authentication, respectively. Rsyslog simplifies troubleshooting postfix. Telnet is used to interact with the Simple Mail Transfer Protocol (SMTP for short) server for testing purposes.
 
 ### Postfix configuration
 A clean postfix installation will have to config files within its directory at /etc/postfix. You will need to replace these files with the ones in netBuilder/postfix-conf in this repo. You will also need to add the other files from netBuilder/postfix-conf to /etc/postfix. Clone this repository into /, and move the config files with the following
@@ -123,7 +123,23 @@ to send an email remotely. The default domain should be luked.com. Type the foll
 If you've done everything correctly, This should save the email to the text file /var/mail/vhosts/example.com/[username] or, if there is a '/' character after the right side of the vmailbox text file for that user, mail will be stored in a unique text file in the directory /var/mail/vhosts/example.com/[username]/new.
 
 ### Send email via email script
-The agents/emailSender.py script from this repository will automatically send an email. By default, it will send an email from "s[the ip address of the box]@example.com" to "info@example.com". It will also attempt to connect to an email server named "studio.lrd.com" by default. To change this to send an email to a different server, or from/to a different email address, you will need to modify the script. The script will contain comments with further instructions on how to do this.
+The agents/emailSender.py script from this repository will automatically send an email. By default, it will send an email from "s<the ip address of the box>@example.com" to "info@example.com". It will also attempt to connect to an email server named "studio.lrd.com" by default. To change this to send an email to a different server, or from/to a different email address, you will need to modify the script. The script will contain comments with further instructions on how to do this.
+
+### Troubleshooting
+rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 
+    
+    service rsyslog start
+ Use 
+ 
+     tail -n <no. lines> 
+ to view the latest lines of the syslog file. This will display what went wrong after attempting and failing to access the SMTP server. Use this method to diagnose issues with postfix. After being configured, dovecot will send its logs to /var/log/dovecot.log and /var/log/dovecot-info.log. To test that dovecot is working, use 
+    
+    telnet localhost 110
+ and type 
+ 
+     user <username@example.com>
+     pass <password>
+To ensure that dovecot is properly allowing users to log in.
 
 ## Scheduler
 To run the scheduler, simply type the command 
