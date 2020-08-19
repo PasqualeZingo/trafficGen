@@ -168,8 +168,8 @@ To print it remotely, type
     lp -U 'reciever' -d 'VPDF' -h '<name_of_printer_server_VM.pfsense_domain.com/org/etc.>' <path-to-traficGen-repo>/trafficGen/agents/printThis.pdf
 After this has been done successfully, The command should return a response in the format
 
-    request id is VPDF-x (1 file(s))
-Where x is the number of jobs requested already plus one.
+    request id is VPDF-X (1 file(s))
+Where X is the number of jobs requested already plus one.
 
 If everythin worked correctly, a new file will appear in /home/reciever/PDF. The default domain for the pfsense template is luked.com.
 
