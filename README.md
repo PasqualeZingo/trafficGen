@@ -102,9 +102,25 @@ This file contains the username and password for each account. In this repositor
 ### Manually send an email
 To send an email, you will first need to get the base64 string containing the username and password used to log in. Echo the username and password in the format
 
-    \000\<username@example.com>\000\<password>
+    \000<username@example.com>\000<password>
     
-and pipe into a program to convert into base 64. Make sure to use the -n and -e options on the echo command to remove the trailing newline and escape the \000's. Now type 'telnet localhost 587' from the server itself, or type "telnet [hostname@pfsense.domain.com] 587" to send an email remotely. Type 'ehlo there' and press enter. Now, type 'AUTH PLAIN [string from earlier]'. "Type MAIL FROM:[username@example.com]". Finally, type "RCPT TO:[username@example.com]". If you've done everything correctly, you will now be able to type a message by typing "data". End your email with a line that has only a '.' character. This should save the email to the text file /var/mail/vhosts/example.com/[username] or, if there is a '/' character after the right side of the vmailbox text file for that user, mail will be stored in a unique text file in the directory /var/mail/vhosts/example.com/[username]/new.
+and pipe into a program to convert into base 64. Make sure to use the -n and -e options on the echo command to remove the trailing newline and escape the \000's. Now type
+
+    telnet localhost 587
+from the server itself, or type 
+    
+    telnet <hostname.pfsense_domain.com/org/etc.> 587
+to send an email remotely. The default domain should be luked.com. Type the following sequence of commands to send an email.
+
+    ehlo there 
+    AUTH PLAIN <string from earlier> 
+    MAIL FROM:<sender@example.com> 
+    RCPT TO:<reciever@example.com>
+    data
+    <Type the body of the email here>
+    .
+    
+If you've done everything correctly, This should save the email to the text file /var/mail/vhosts/example.com/[username] or, if there is a '/' character after the right side of the vmailbox text file for that user, mail will be stored in a unique text file in the directory /var/mail/vhosts/example.com/[username]/new.
 
 ### Send email via email script
 The agents/emailSender.py script from this repository will automatically send an email. By default, it will send an email from "s[the ip address of the box]@example.com" to "info@example.com". It will also attempt to connect to an email server named "studio.lrd.com" by default. To change this to send an email to a different server, or from/to a different email address, you will need to modify the script. The script will contain comments with further instructions on how to do this.
