@@ -21,7 +21,7 @@ Our VM image is hosted on google drive which can be downloaded here. #TODO inser
 In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, and an email server.
 
 ## Email server
-This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured.
+This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured. The template on brass will have the default domain luked.com, however, if the email server is named "studio", it will recieve a static ip of 192.168.1.1 and a unique domain of lrd.com. Keep this in mind when telneting into the server.
 
 ### Installation
 The first step to setting up the server is to install the software that the server will use to relay the mail, along with other basic utilities. To do this, run the following command:
