@@ -57,7 +57,13 @@ class Route():
         """
         self.router.stop()
 
-def Clear(project_name):
+def Clear(project_name : str):
+    """
+    Stops and then deletes all nodes within the specified project. Prints a confirmation message, and returns nothing. The project must be opened before this funciton is called.
+    If the project is closed by a user while this funciton is running, it may lead to undefined behavior.
+    args:
+        project_name (str): the name of the project to be cleared. 
+    """
      project_id = server.get_project(project_name)['project_id']
      nodes = server.get_nodes(project_id)
      for node in nodes:
