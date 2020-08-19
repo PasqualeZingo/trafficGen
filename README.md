@@ -169,7 +169,7 @@ To print it remotely, type
 After this has been done successfully, The command should return a response in the format
 
     request id is VPDF-X (1 file(s))
-Where X is the number of jobs requested already plus one.
+Where X is the number of jobs previously requested plus one.
 
 If everythin worked correctly, a new file will appear in /home/reciever/PDF. The default domain for the pfsense template is luked.com.
 
