@@ -36,10 +36,25 @@ class Route():
         L.create()
         self.used_links = 1
     def delete(self):
+        """
+        Deletes the router created by this Route class. Returns nothing.
+        args:
+            self (Route): The current instance of Route.
+        """
         self.router.delete()
     def start(self):
+        """
+        Starts the router created by this Route class. Returns nothing.
+        args:
+            self (Route): The current instance of Route.
+        """
         self.router.start()
     def stop(self):
+        """
+        Stops the router created by this Route class. Returns nothing.
+        args:
+            self (Route): The current instance of Route.
+        """
         self.router.stop()
 
 def Clear(project_name):
@@ -91,12 +106,27 @@ class Star(Route):
                             self.Nodes[len(self.Nodes) - 1].ports[0].get("name"))
             self.used_links+=1
     def start(self):
+        """
+        Starts the nodes created by this instance of the Star class. Returns nothing.
+        args:
+            self (Star): the current instance of Star.
+        """
         for n in self.Nodes:
             n.start()
     def stop(self):
+        """
+        Stops the nodes created by the current instance of the Star class. Returns nothing.
+        args:
+            self (Star): the current instance of Star.
+        """
         for n in self.Nodes:
             n.stop()
     def delete(self):
+        """
+        Deletes the nodes created by the current instance of the Star class. Returns nothing.
+        args:
+            self (Star): the current instance of Star.
+        """
         for n in self.Nodes:
             n.delete()
 
@@ -123,12 +153,27 @@ class Heterogenous(Route):
         self.node_port = self.Nodes[0].port_name_format
         self.used_links = 1
     def start(self):
+                """
+        Starts the nodes created by this instance of the Heterogenous class. Returns nothing.
+        args:
+            self (Star): the current instance of Heterogenous.
+        """
         for n in self.Nodes:
             n.start()
     def stop(self):
+        """
+        Stops the nodes created by this instance of the Heterogenous class. Returns nothing.
+        args:
+            self (Star): the current instance of Heterogenous.
+        """
         for n in self.Nodes:
             n.stop()
     def delete(self):
+        """
+        deletes the nodes created by this instance of the Heterogenous class. Returns nothing.
+        args:
+            self (Star): the current instance of Heterogenous.
+        """
         for n in self.Nodes:
             n.delete()
 
