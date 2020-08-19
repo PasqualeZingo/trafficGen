@@ -37,14 +37,14 @@ command.
     
 Run the command 
 
-    "postmap login_maps virtual vmailbox" 
+    postmap login_maps virtual vmailbox 
     
 to allow postfix to read the files. If you wish to change login_maps, virtual, or vmailbox, make your changes, run 
 
-    postmap <file>"
+    postmap <file>
 and then restart postfix with the command
     
-    "postfix reload" 
+    postfix reload 
 If postfix is already shut down, use "postfix start" instead.
 
 Below there is a list of the files in netBuilder/postfix-conf and a description of their function:
