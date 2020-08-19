@@ -166,7 +166,7 @@ To print a file, first you will need to find a pdf file to print. This repositor
 To print it remotely, type 
     
     lp -U 'reciever' -d 'VPDF' -h '<name_of_printer_server_VM.pfsense_domain.com/org/etc.>' <path-to-traficGen-repo>/trafficGen/agents/printThis.pdf
-After this has been done successfully, The command should return a response similar to
+After this has been done successfully, The command should return a response in the format
 
     request id is VPDF-x (1 file(s))
 Where x is the number of jobs requested already plus one.
