@@ -1,11 +1,31 @@
 import requests, json
 class Startup(object):
   def __init__(self, hostname, user, secret):
+  """
+  Constructor function. Stores the appropriate arguments as properties of self. Returns nothing. Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+  args:
+       self (Startup): The current instance of Startup.
+       hostname (str): the hostname of the storage server, including the domain.
+       user (str): the username to send requests as.
+       secret (str): the password of user.
+  """
        self._hostname = hostname
        self._user = user
        self._secret = secret
        self._ep = 'http://%s/api/v1.0' % hostname
   def request(self, resource, method='GET', data=None):
+  """
+  Makes a request where method=method and data=data of the FreeNAS api with the url stored in self._ep plus resource. Returns the response as a json if possible or a string otherwise. Raises a valueError if the response contains an error code.
+  Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+  args:
+       self (Startup): The current instance of Startup.
+       resource (str): a string appended to the api's url stored in self._ep. The request is made to this concatenated string.
+       method (str): a string representing the method of the request. Default value is "GET".
+       data (str): a string representing the data to be sent to the api. Default value is None.
+  returns:
+       str: The text of the response from the server.
+       
+  """
        if data is None:
            data = ''
        r = requests.request(
@@ -22,12 +42,10 @@ class Startup(object):
                return r.text
        raise ValueError(r)
 
-  def _get_disks(self):
-       disks = self.request('storage/disk')
-       return [disk['disk_name'] for disk in disks]
-
   def create_pool(self):
-       disks = self._get_disks()
+  """
+  
+  """
        return self.request('storage/volume', method='POST', data={
            'volume_name': 'tank',
            'layout': [
