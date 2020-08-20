@@ -201,3 +201,26 @@ To add dashboards throught the API, use the add.sh script on a json file contain
 ### addall.sh
 If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
  
+## Pfsense config
+To configure pfsense, open a browser on the network connected to it, and type its ip address into the search bar. For the default template on brass, that ip is 192.168.1.1.
+The username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. The default domain for the router is luked.com. 
+
+### DNS
+To configure the DNS resolver, click the three lines at the top right corner. In the drop-down menu that appears, click services > DNS resolver. The options you will need to be concerned with are listed below.
+
+#### Enable
+Whether DNS is allowed on the server. This _must_ be on.
+
+#### Network Interfaces
+Which interfaces respond to DNS requests. Set this to all. 
+
+#### Outgoing Network Interfaces
+Which interface is used to find other DNS servers. Set to All or WAN.
+
+#### DHCP Registration
+Clients tell the server their hostname when requesting an IP address from the DHCP server. This will allow you to ping anything on the network by typing the command
+
+    ping <hostname>.<domain>
+
+#### Static DHCP
+Allows mapping clients with a specific name to a specific IP address. Something similar can be achieved through the DHCP Static Mappings for this Interface option under Services > DHCP server, though this will require knowledge of the client's MAC address. 
