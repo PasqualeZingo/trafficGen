@@ -20,7 +20,6 @@ class Startup(object):
                return r.json()
            except:
                return r.text
-       print(r.text)
        raise ValueError(r)
 
   def _get_disks(self):
@@ -29,31 +28,38 @@ class Startup(object):
 
   def create_pool(self):
        disks = self._get_disks()
-       print(self.request('storage/volume', method='POST', data={
+       return self.request('storage/volume', method='POST', data={
            'volume_name': 'tank',
            'layout': [
                {'vdevtype': 'stripe', 'disks': "ada1"},
            ]
-}))
+})
   def create_dataset(self):
-       self.request('storage/volume/tank/datasets', method='POST', data={
+       return self.request('storage/volume/tank/datasets', method='POST', data={
            'name': 'MyShare',
        })
 
   def create_nfs_share(self):
-       self.request('sharing/nfs', method='POST', data={
+       return self.request('sharing/nfs', method='POST', data={
            'nfs_name': 'My Test Share',
            'nfs_paths': ['/mnt/tank/MyShare'],
-           'nfs_guestonly': True
+           'nfs_guestonly': True,
+           'nfs_mapall_user': 'root',
 })
   def service_start(self, name):
-       self.request('services/services/%s' % name, method='PUT', data={
+       return self.request('services/services/%s' % name, method='PUT', data={
            'srv_enable': True,
 
 })
 
 S = Startup("FreeNAS.luked.com","root","toor")
 
-S.create_nfs_share()
-
-S.service_start("nfs")
+print(S.create_pool())
+print("----------")
+print(S.create_dataset())
+print("----------")
+print(S.create_nfs_share())
+print("----------")
+print(S.service_start("nfs"))
+print("----------")
+print(S.request("sharing/nfs"))
