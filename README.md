@@ -18,7 +18,7 @@ Our VM image is hosted on google drive which can be downloaded here. #TODO inser
 * ML
 
 # Network setup
-In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, and an email server.
+In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, an email server, and a network attached storage server.
 
 ## Email server
 This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured. The template on brass will have the default domain luked.com, however, if the email server is named "studio", it will recieve a static ip of 192.168.1.1 and a unique domain of lrd.com. Keep this in mind when telneting into the server.
@@ -141,13 +141,6 @@ rsyslog creates a file in /var/log called syslog, which logs interactions with t
      pass <password>
 To ensure that dovecot is properly allowing users to log in.
 
-## Scheduler
-To run the scheduler, simply type the command 
-    
-    python3 scheduler.py
-
-If it prints "Call random duckduckgo query", it will tell all the boxes to query a random website. The number of these queries made will be stored on each box under "/trafficGen/agents/.queries". If the scheduler prints "Call send Email", each box will send an email to the address info@example.com. These emails will be stored in "/var/mail/vhosts/example.com/info". Finally, if the scheduler prints "Print a dummy file", each box will send a print request to the print server, named cups_pdf in the example_net.py network, and successful "prints" on the virtual printer will be stored in "/home/reciever/PDF". NOTE: this scheduler will currently only work if the example-net.py script is run while a project named "testtest" exists.
-
 ## Print Server
 This is a simple print server/virtual printer setup. Like the email server, this assumes that a pfsense router with DNS is set up on the network. The default domain on the brass template will be luked.com.
 
@@ -187,9 +180,32 @@ After this has been done successfully, The command should return a response in t
     request id is VPDF-X (1 file(s))
 Where X is the number of jobs previously requested plus one.
 
-If everythin worked correctly, a new file will appear in /home/reciever/PDF. The default domain for the pfsense template is luked.com.
+If everything worked correctly, a new file will appear in /home/reciever/PDF. The default domain for the pfsense template is luked.com.
 
-## Security Onion
+
+## Network-attached storage server
+A network-attached storage server is used essentially as a private cloud service. This network willl use the FreeNAS operating system for this purpose. The FreeNAS OS stores data in datasets, which are contained in pools. The data can be located on the server itself through a shell within /mnt/<pool>/<dataset>. 
+
+### Setup 
+  In order to share data, the server will need to be told to set up a share using the service appropriate for the Operating Systems used by other machines on the network. The freeNAS.py script uses nfs, which is used for UNIX operating systems such as linux. The FreeNAS template on brass already has version 11.3-U4 of the FreeNAS OS installed. It also has a pool, dataset, and share, but these were not saved properly and will not function. As such, you will need to use the netBuilder/freeNAS.py script to set up a working area to store data. If it does not work, check to make sure that the domain of the router is luked.com. If it is something else, modify the script accordingly. This script should function from any computer on a network with the FreeNAS VM, as long as the root password has not be modified. Once the script has been run successfully, it should display several json objects, representing the objects created by the script. The comments and doc strings within freeNAS.py will give a more detailed run down of how the objects are being created. 
+
+### Usage
+  Once the freeNAS.py script has been executed, any machine with the nfs-common package installed should be capable of interacting with the new share. Type the following commands to access the share:
+  
+    service nfs-common start
+    mount FreeNAS.luked.com:/mnt/tank/MyShare /mnt
+  After running these commands, any files added to or deleted from the directory /mnt will be added to the appropriate dataset on the FreeNAS server. Any other machines with the dataset mounted will see the changes occur in real time. To unmount the dataset, in order to modify it or for some other reason, type the following command. Note that this will not work if the current working directory is currently /mnt.
+  
+    umount /mnt
+
+# Scheduler
+To run the scheduler, simply type the command 
+    
+    python3 scheduler.py
+
+If it prints "Call random duckduckgo query", it will tell all the boxes to query a random website. The number of these queries made will be stored on each box under "/trafficGen/agents/.queries". If the scheduler prints "Call send Email", each box will send an email to the address info@example.com. These emails will be stored in "/var/mail/vhosts/example.com/info". Finally, if the scheduler prints "Print a dummy file", each box will send a print request to the print server, named cups_pdf in the example_net.py network, and successful "prints" on the virtual printer will be stored in "/home/reciever/PDF". NOTE: this scheduler will currently only work if the example-net.py script is run while a project named "testtest" exists.
+
+# Security Onion
 If you wish to visualize the data generated by this traffic, you will need to run Kibana on securityonion. First, download the securityonion template from the gns3 server. Right click the template and click 'configure template'. In the RAM: field, you will want 8-16 GB, depending on what you can spare. If you have the resources, change the vCPUs field to 2 to give the box 2 cores. Now add it to your network and start it. Run through the setup process, which the securityonion should lead you through.
 
 ### Add all dashboards through UI
@@ -201,7 +217,7 @@ To add dashboards throught the API, use the add.sh script on a json file contain
 ### addall.sh
 If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
  
-## Pfsense config
+# Pfsense config
 To configure pfsense, open a browser on the network connected to it, and type its ip address into the search bar. For the default template on brass, that ip is 192.168.1.1.
 The username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. The default domain for the router is luked.com. 
 
