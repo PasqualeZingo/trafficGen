@@ -2,6 +2,7 @@ import time
 import numpy as np
 import os
 
+os.system("/usa/lucasd/trafficGen/runCont/startNAS.sh")
 alive = True
 run = True # Get from docker run signal
 scale = 1
@@ -10,10 +11,14 @@ while alive:
     if not run:
         time.sleep(10)
         continue
-    if nxt < .5:
+    if nxt < .35:
         print("Call random duckduckgo query")
         #Executes userAgent.py on all traffic_gen_boxes.
-        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")
+        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")        
+   
+    elif nxt < .5:
+        print("Interact with storage")
+
     elif nxt < .75:
         print("Call send Email")
         #Executes emailSender.py on all traffic_gen_boxes.
