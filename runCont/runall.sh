@@ -13,7 +13,7 @@ let "len=len-1"
 for ID in $(tail contls -n $len)
 do
     #If the container's hostname is equal to traffic_gen_box followed by some string...
-    if [[ $(docker exec -i $ID /bin/bash < /usa/lucasd/runCont/gethost.sh) == "traffic_gen_box"* ]]
+    if [[ $(docker exec -i $ID /bin/bash < /usa/lucasd/trafficGen/runCont/gethost.sh) == "traffic_gen_box"* ]]
     then
     	    #Execute the first argument to the script given in the command line on the container.
 	    /usa/lucasd/runCont/run.sh $ID $1
