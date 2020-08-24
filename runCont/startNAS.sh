@@ -11,9 +11,10 @@ let "len=len-1"
 #For each container currently active...
 for ID in $(tail contls -n $len)
 do
-    if [[ $(docker exec -i $ID /bin/bash < /usa/lucasd/runCont/gethost.sh) == "traffic_gen_box"* ]]
+    if [[ $(docker exec -i $ID /bin/bash < /usa/lucasd/trafficGen/runCont/gethost.sh) == "traffic_gen_box"* ]]
     then
-        ./.freenas.sh
+        echo "$(docker exec -i $ID /bin/bash < /usa/lucasd/trafficGen/runCont/gethost.sh)"
+        docker exec -d $ID /.freenas.sh
         break
     fi
 done
