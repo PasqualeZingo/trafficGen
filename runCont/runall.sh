@@ -16,7 +16,7 @@ do
     if [[ $(docker exec -i $ID /bin/bash < /usa/lucasd/trafficGen/runCont/gethost.sh) == "traffic_gen_box"* ]]
     then
     	    #Execute the first argument to the script given in the command line on the container.
-	    /usa/lucasd/runCont/run.sh $ID $1
+	    /usa/lucasd/trafficGen/runCont/run.sh $ID $1
     fi
 done 
 
