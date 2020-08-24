@@ -27,8 +27,11 @@ gp1.node_add(nnodes=4, template="traffic_gen_box")
 #Add a printer server named "cups_pdf" to the network.
 gp1.node_add(nnodes=1,template="printer",name="cups_pdf")
 
-#Add an email server named "studio.lrd.com" to the printer server.
+#Add an email server named "studio.lrd.com" to the network.
 gp1.node_add(nnodes=1,template="studio.lrd.com",name="studio.lrd.com")
+
+#Add a network-attached storage server named "FreeNAS" to the network.
+gp1.node_add(nnodes=1,template="FreeNAS",name="FreeNAS")
 
 #Start the nodes created with the Star class.
 gp1.start()
