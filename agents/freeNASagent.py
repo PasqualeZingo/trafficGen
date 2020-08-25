@@ -32,7 +32,10 @@ class Connection(object):
         files = files.split("\n")
         fileno = random.randint(0,len(files) - 1)
         file = files[fileno]
-        return file
+        if file:
+            return file:
+        else:
+            raise ValueError("Attempted to retrieve locally stored files from an empty directory!")
     def _getRandNetFile(self):
         system('echo "$(ls %s)" > .dat' % self.mountPoint) 
         f = open(".dat","r")
