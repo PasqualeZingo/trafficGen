@@ -18,6 +18,7 @@ while alive:
         os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.query.sh")        
     elif nxt < .5:
         print("Interact with storage")
+        os.system("/usa/lucasd/trafficGen/runCont/runall.sh /.freenasagent.sh")
     elif nxt < .75:
         print("Call send Email")
         #Executes emailSender.py on all traffic_gen_boxes.
