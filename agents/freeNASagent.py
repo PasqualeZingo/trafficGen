@@ -42,4 +42,10 @@ class Connection(object):
         files = files.split("\n")
         fileno = random.randint(0,len(files) - 1)
         file = files[fileno]
-        return file
+        if file:
+            return file
+        else:
+            raise ValueError("Attempted to retrieve remotely stored files when none exist!")
+
+C = Connection("FreeNAS","luked.com","~/net","~/loc","tank","MyShare")
+C._getRandNetFile()
