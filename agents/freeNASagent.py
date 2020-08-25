@@ -16,7 +16,10 @@ class Connection(object):
         system(cmd)
         return cmd
     def netToLocal(self):
-        cmd = "cp %s/%s %s" % (self.mountPoint,self._getRandNetFile(),self.local)
+        if self._getRandNetFile():
+            cmd = "cp %s/%s %s" % (self.mountPoint,self._getRandNetFile(),self.local)
+        else:
+            return "No remote files."
         system(cmd)
         return cmd
     def umount(self):
@@ -45,10 +48,7 @@ class Connection(object):
         files = files.split("\n")
         fileno = random.randint(0,len(files) - 1)
         file = files[fileno]
-        if file:
-            return file
-        else:
-            raise ValueError("Attempted to retrieve remotely stored files when none exist!")
+        return file
 
 C = Connection("FreeNAS","luked.com","/mnt","/root","tank","MyShare")
 todo = random.randint(0,1)
