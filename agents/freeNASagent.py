@@ -50,5 +50,11 @@ class Connection(object):
         else:
             raise ValueError("Attempted to retrieve remotely stored files when none exist!")
 
-C = Connection("FreeNAS","luked.com","~/net","~/loc","tank","MyShare")
-C._getRandNetFile()
+C = Connection("FreeNAS","luked.com","/mnt","/root","tank","MyShare")
+todo = random.randint(0,1)
+if todo:
+    C.netToLocal()
+else:
+    C.localToNet()
+C.umount()
+
