@@ -9,7 +9,7 @@ class Connection(object):
         self.poolName = poolName
         self.shareName = shareName
         self.local = localStorage
-        cmd = "mount " + self.url + ":/" + self.poolName + "/" + self.shareName + " " + self.mountPoint
+        cmd = "mount " + self.url + ":/mnt/" + self.poolName + "/" + self.shareName + " " + self.mountPoint
         system(cmd)
     def localToNet(self):
         cmd = "cp %s/%s %s" % (self.local,self._getRandLocalFile(),self.mountPoint)
@@ -36,7 +36,7 @@ class Connection(object):
         fileno = random.randint(0,len(files) - 1)
         file = files[fileno]
         if file:
-            return file:
+            return file
         else:
             raise ValueError("Attempted to retrieve locally stored files from an empty directory!")
     def _getRandNetFile(self):
