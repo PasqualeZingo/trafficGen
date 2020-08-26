@@ -66,7 +66,9 @@ This file contains email addresses followed by the name of a directory. Email se
 ### Dovecot configuration
 Once you have set up postfix, you will need to configure dovecot as well. First, run the following sequence of commands: 
     
-    groupadd vmail -g 5000". Next, run "useradd vmail -s /bin/bash -u 5000 -g 5000 
+    groupadd vmail -g 5000
+    
+    useradd vmail -s /bin/bash -u 5000 -g 5000 
     
     mkdir /var/mail/vhosts 
     
@@ -110,7 +112,7 @@ and pipe into a program to convert into base 64. Make sure to use the -n and -e 
 from the server itself, or type 
     
     telnet <hostname.pfsense_domain.com/org/etc.> 587
-to send an email remotely. The default domain should be luked.com. Type the following sequence of commands to send an email.
+to send an email remotely. The default domain for a pfsense template on brass should be luked.com. Type the following sequence of commands to send an email.
 
     ehlo there 
     AUTH PLAIN <string from earlier> 
