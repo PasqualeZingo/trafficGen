@@ -1,8 +1,9 @@
 import time
 import numpy as np
 import os
+from runall import startNAS, runall
 
-os.system("python3 /usa/lucasd/trafficGen/runCont/startNAS.py")
+startNAS()
 time.sleep(10)
 alive = True
 run = True # Get from docker run signal
@@ -15,18 +16,18 @@ while alive:
     if nxt < .35:
         print("Call random duckduckgo query")
         #Executes userAgent.py on all traffic_gen_boxes.
-        os.system("python3 /usa/lucasd/trafficGen/runCont/runall.py /.query.sh")        
+        runall(".query")        
     elif nxt < .5:
         print("Interact with storage")
-        os.system("python3 /usa/lucasd/trafficGen/runCont/runall.py /.freenasagent.sh")
+        runall(".freenasagent.sh")
     elif nxt < .75:
         print("Call send Email")
         #Executes emailSender.py on all traffic_gen_boxes.
-        os.system("python3 /usa/lucasd/trafficGen/runCont/runall.py /.email.sh")
+        runall(".email")
     elif nxt < .95:
         print("Print a dummy file")
         #Executes printFile.py on all traffic_gen_boxes.
-        os.system("python3 /usa/lucasd/trafficGen/runCont/runall.py /.print.sh")
+        runall(".print.sh")
     elif nxt >= 0.95:
         print("Done for now")
         #Terminates the program.
