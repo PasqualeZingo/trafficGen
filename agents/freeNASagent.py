@@ -4,6 +4,26 @@ import random
 
 class Connection(object):
     def __init__(self,hostname,domain,mountPoint,localStorage,poolName,shareName):
+        """
+        Constructor funciton. store the hostname and domain in self.url, the mountPoint in self.mountPoint, localStorage in self.local, poolName in self.poolName, and shareName in self.shareName. Return nothing.
+        
+        args
+        ----
+        self : Connection
+            the current instance of Connection.
+        hostname : str
+            The hostname of the FreeNAS server.
+        domain : str
+            The domain used to locate the FreeNAS server.
+        mountPoint : str
+            The directory where share files will appear.
+        localStorage : str
+            A directory containing files to be copied to and from mountPoint.
+        poolName : str
+            The name of the pool containing the desired share
+        shareName : str
+            The name of the desired share.
+        """
         self.url = "%s.%s" % (hostname,domain)
         self.mountPoint = mountPoint
         self.poolName = poolName
@@ -12,6 +32,19 @@ class Connection(object):
         cmd = "mount " + self.url + ":/mnt/" + self.poolName + "/" + self.shareName + " " + self.mountPoint
         system(cmd)
     def localToNet(self):
+        """
+        Take a Connection object as an input. Copy a randomly selected file from self.local to self.mountPoint. Return the command run through bash to copy the file as a string.
+        
+        args
+        ----
+        self : Connection
+            A Connection object.
+        
+        returns
+        -------
+        str
+            The command run by os.system to copy the randomly selected file.
+        """
         cmd = "cp %s/%s %s" % (self.local,self._getRandLocalFile(),self.mountPoint)
         system(cmd)
         return cmd
