@@ -71,7 +71,7 @@ class Connection(object):
         if file:
             return file
         else:
-            raise ValueError("Attempted to retrieve locally stored files from an empty directory!")
+            raise ValueError("Attempted to retrieve locally stored files from an empty or nonexistent directory! If the directory is not empty, make sure you have rwx permissions.")
     def _getRandNetFile(self):
         system('echo "$(ls %s)" > .dat' % self.mountPoint) 
         f = open(".dat","r")
