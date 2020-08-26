@@ -197,7 +197,7 @@ A network-attached storage server is used essentially as a private cloud service
   
     service nfs-common start
     mount FreeNAS.luked.com:/mnt/tank/MyShare /mnt
-  After running these commands, any files added to or deleted from the directory /mnt will be added to the appropriate dataset on the FreeNAS server. Any other machines with the dataset mounted will see the changes occur in real time. To unmount the dataset, in order to modify it or for some other reason, type the following command. Note that this will not work if the current working directory is currently /mnt.
+  After running these commands, any files added to or deleted from the directory /mnt will be added to the appropriate dataset on the FreeNAS server. Any other machines with the dataset mounted will see the changes occur in real time. To unmount the dataset, in order to modify it or for some other reason, type the following command. Note that this will not work if the current working directory is /mnt.
   
     umount /mnt
 
