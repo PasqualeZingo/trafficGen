@@ -16,7 +16,8 @@ while alive:
     if nxt < .35:
         print("Call random duckduckgo query")
         #Executes userAgent.py on all traffic_gen_boxes.
-        runall(".query")        
+        runall(".query")
+        time.sleep(5)        
     elif nxt < .5:
         print("Interact with storage")
         runall(".freenasagent.sh")
