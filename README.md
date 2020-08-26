@@ -245,4 +245,4 @@ Clients tell the server their hostname when requesting an IP address from the DH
 Allows mapping clients with a specific name to a specific IP address. Something similar can be achieved through the DHCP Static Mappings for this Interface option under Services > DHCP server, though this will require knowledge of the client's MAC address. 
 
 # runall.py
-A python module containing functions that allow other scripts to run executable scripts in docker containers. More details in the documentation of the script itself.
+A python module containing functions that allow other scripts to run executable scripts in docker containers. More details in the documentation within the script itself.
