@@ -2,6 +2,7 @@ from os import system
 import sys
 
 def Run(ID,File):
+    print(f"docker exec -d {ID} {File}")
     system(f"docker exec -d {ID} {File}")
 
 def runall(File):
@@ -15,7 +16,7 @@ def runall(File):
         ID = line.split(" ")[0]
         image = line.split(" ")[1]
         if image == "traffic_gen_box:latest":
-            Run(ID,sys.argv[1])
+            Run(ID,File)
 
 def startNAS():
     system("docker container ls | tial -n +2 | awk -F' ' '{print $1,$2}' > contls")
