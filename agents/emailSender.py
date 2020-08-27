@@ -3,6 +3,7 @@ from base64 import b64encode #To create the base 64 auth string.
 def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->str:
 	"""
 	Sends an email from sender to target by telneting into an SMTP (Simple Mail Transfer Protocol) server. Requires the server to allow pipelining for unauthenticated users.
+
 	args:
 		sender (str): The user sending the email. Must include the domain used for the addresses on the server.
 		target (str): The intended recipient of the email. Must include the comain used for the addresses on the server.
@@ -27,6 +28,7 @@ def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->st
 def getIP()->str:
     """
     Gets the IPv4 address of the VM running this script. Requires the VM to have the net-tools package installed.
+
     returns:
     	str: the IPv4 address of the local machine.
     """
