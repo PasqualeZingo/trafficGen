@@ -2,9 +2,36 @@ from os import system #To enter commands into bash for mounting and unmounting /
 import random #To randomly select a file from the local or remote storage, and to randomly choose between copying from local to remote or vice-versa.
 
 class Connection(object):
-    def __init__(self,hostname,domain,mountPoint,localStorage,poolName,shareName):
+    """
+    A class representing a connection to a FreeNAS server.
+    
+    Attrubutes
+    ----------
+    hostname : str
+        The hostname of the server.
+    domain : str
+        The domain of the server.
+    mountPoint : str
+        The directory where shared files will appear. Copying files to this directory will store them on the server.
+    local : str
+        The directory where files are copied to the server from and from the server to.
+    poolName : str
+        The name of the pool containing the desired dataset.
+    shareName : str
+        The name of the desired dataset, shared via nfs.
+
+    Methods
+    -------
+    __init__(self: Connection,hostname : str,domain : str, mountPoint : str, local : str, poolName : str, shareName : str)
+        Constructor function. Copies the string arguments into the attributes of the same names. Returns nothing.
+    localToNet(self: Connection)
+        Copies a random file from self.local to self.mountPoint.
+    netToLocal(self: Connection)
+    TBD
+    """
+    def __init__(self,hostname,domain,mountPoint,local,poolName,shareName):
         """
-        Constructor funciton. store the hostname and domain in self.url, the mountPoint in self.mountPoint, localStorage in self.local, poolName in self.poolName, and shareName in self.shareName. Return nothing.
+        Constructor funciton. store the hostname and domain in self.url, the mountPoint in self.mountPoint, local in self.local, poolName in self.poolName, and shareName in self.shareName. Return nothing.
         
         args
         ----
@@ -16,7 +43,7 @@ class Connection(object):
             The domain used to locate the FreeNAS server.
         mountPoint : str
             The directory where share files will appear.
-        localStorage : str
+        local : str
             A directory containing files to be copied to and from mountPoint.
         poolName : str
             The name of the pool containing the desired share
@@ -32,7 +59,7 @@ class Connection(object):
         #Store the name of the shared dataset.
         self.shareName = shareName
         #Store the location to look for local files.
-        self.local = localStorage
+        self.local = local
         #Create a command to mount the remote storage.
         cmd = "mount " + self.url + ":/mnt/" + self.poolName + "/" + self.shareName + " " + self.mountPoint
         #Mount the remote storage.
