@@ -1,4 +1,4 @@
-import os #Allows using bash commands from within python.
+import os #Allows using bash commands from within python for accessing the email server.
 from base64 import b64encode #To create the base 64 auth string.
 def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->str:
 	"""

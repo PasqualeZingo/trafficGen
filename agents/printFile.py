@@ -1,4 +1,4 @@
-import os #Allows sending commands to the bash terminal.
+import os #Allows sending commands to the bash terminal to send a print request to the server through the lp command.
 def printFile(fname: str)->None:
     """
     Prints a file.
