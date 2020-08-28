@@ -1,6 +1,17 @@
+"""
+A script that sends an email of subject test and body init from s[ip of box]@example.com to info@example.com on server studio.lrd.com.
+
+Functions
+---------
+sendEmail(serverName: str, sender: str, target: str,subject: str,body: str,pwd="password")->str
+	Sends an email of subject subject and body body through server serverName as sender to target. Logs sender as the username and pwd as the password.
+getIP()->str
+	Get the IPv4 address of the machine and return as a string. Requires net-tools package.
+"""
+
 import os #Allows using bash commands from within python for accessing the email server.
 from base64 import b64encode #To create the base 64 auth string.
-def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->str:
+def sendEmail(serverName : str, sender: str,target: str,subject: str,body: str,pwd="password")->str:
 	"""
 	Sends an email from sender to target by telneting into an SMTP (Simple Mail Transfer Protocol) server. Requires the server to allow pipelining for unauthenticated users.
 
@@ -19,7 +30,7 @@ def sendEmail(sender: str,target: str,subject: str,body: str,pwd="password")->st
 	f.write(cmd)
 	f.close()
 	#Opens a telnet connection to the email server and reads lines from email.txt instead of stdin. Change the second argument to telnet on this line if the email server has a different hostname or domain.
-	os.system("telnet studio.lrd.com 587 < email.txt")
+	os.system(f"telnet {serverName} 587 < email.txt")
 	#Removes the now extraneous email.txt file.
 	os.system("rm email.txt")
 	#Returns a confirmation message.
@@ -44,4 +55,4 @@ def getIP()->str:
     return ip
 
 #This line calls sendEmail() to send an email from the address "s[ip]@example.com" to "info@example.com". The message will have the subject line "test" and consist of the word "init".
-sendEmail("s" + getIP() + "@example.com","info@example.com","test","init")
+sendEmail("studio.lrd.com","s" + getIP() + "@example.com","info@example.com","test","init")
