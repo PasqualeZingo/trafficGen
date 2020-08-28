@@ -1,5 +1,5 @@
 import time #For sleeping between script executions
-import numpy as np #For generating random numbers between 0 and 1.
+import numpy as np #For generating random numbers between 0 and 1. To randomly decide which traffic type to generate and when to stop the script.
 from runall import startNAS, runall #For starting scripts on the traffic_gen_box containers and adding a pool and a dataset to the FreeNAS server. See runall.__doc__ for more details.
 
 #Add a pool and a dataset to the freenas storage server on the network.
