@@ -66,6 +66,7 @@ ua.get_urls_in_page()
 ua.random_click()
 ua.close_browser()
 
+#If .queries does not exist, create it and write '0' into it.
 try:
     f=open(".queries","x")
     f.close()
@@ -75,6 +76,7 @@ try:
 except:
     pass
 
+#Add one to the number stored in .queries and write the number back into .queries. This records the number of times a query has been made on the machine.
 f=open(".queries","r")
 n=int(f.read().strip())
 f.close()
