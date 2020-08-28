@@ -1,9 +1,18 @@
+"""
+A script designed to interact with a network-attached storage server running the FreeNAS operating system. Randomly decides with a 50/50 chance whether to copy from the server's storage to the local storage or vice-versa.
+
+Classes
+-------
+Connection : object
+    A class representing a connection to a storage server. 
+"""
+
 from os import system #To enter commands into bash for mounting and unmounting /mnt.
 import random #To randomly select a file from the local or remote storage, and to randomly choose between copying from local to remote or vice-versa.
 
 class Connection(object):
     """
-    A class representing a connection to a FreeNAS server.
+    A class representing a connection to a FreeNAS server. Can randomly select files and copy them to or from network storage.
     
     Attrubutes
     ----------
@@ -22,12 +31,18 @@ class Connection(object):
 
     Methods
     -------
-    __init__(self: Connection,hostname : str,domain : str, mountPoint : str, local : str, poolName : str, shareName : str)
-        Constructor function. Copies the string arguments into the attributes of the same names. Returns nothing.
-    localToNet(self: Connection)
-        Copies a random file from self.local to self.mountPoint.
-    netToLocal(self: Connection)
-    TBD
+    __init__(self: Connection,hostname : str,domain : str, mountPoint : str, local : str, poolName : str, shareName : str)->None
+        Constructor function. Copy the string arguments into the attributes of the same names. Return nothing.
+    localToNet(self: Connection)->str
+        Copy a random file from self.local to self.mountPoint. Return the shell command used to do so.
+    netToLocal(self: Connection)->str
+        Copy a random file from self.mountPoint to self.local. Return the shell command used to do so.
+    umount(self: Connection)->str
+        Unmount the remote storage. Return the shell command used to do so.
+    _getRandLocalFile(self: Connection)->str
+        Randomly select the name of a file from self.local and return it.
+    _getRandNetFile(self: Connection)->str
+        Randomly select the name of a file from self.mountPoint and return it.
     """
     def __init__(self,hostname,domain,mountPoint,local,poolName,shareName):
         """
