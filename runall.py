@@ -1,7 +1,8 @@
 """
 A module designed to allow the user to run files on containers from the server hosting them within python.
 
-Functions:
+Functions
+---------
     Run(ID : str,File: str)->None
         Execute the bash script File in docker container ID.
     runall(File : str)->None
