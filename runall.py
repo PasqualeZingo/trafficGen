@@ -35,8 +35,7 @@ def runall(File : str)->None:
     Take one string argument File. Execute the shell script named File within every docker container running the traffic_gen_box:latest image. Return nothing.
     
     args:
-        File (str):
-            The name of the file to be executed within all traffic_gen_box:latest containers.
+        File (str): The name of the file to be executed within all traffic_gen_box:latest containers.
     """
     #Get the ID and image of each active docker container and store the result in a file named contls.
     system("docker container ls | tail -n +2 | awk -F' ' '{print $1,$2}' > contls")

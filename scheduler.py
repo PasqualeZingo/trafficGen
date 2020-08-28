@@ -3,6 +3,7 @@ import numpy as np #For generating random numbers between 0 and 1.
 from runall import startNAS, runall #For starting scripts on the traffic_gen_box containers and adding a pool and a dataset to the FreeNAS server. See runall.__doc__ for more details.
 
 def test():
+    print("Running in test mode.")
     startNAS()
     time.sleep(10)
     print("Making query")
@@ -12,10 +13,11 @@ def test():
     runall(".email")
     time.sleep(10)
     print("Printing dummy file")
-    runall("print.sh")
+    runall(".print.sh")
     time.sleep(10)
     print("Interacting with storage")
     runall(".freenasagent")
+    time.sleep(10)
     return
 
 def main():
@@ -60,4 +62,4 @@ def main():
         #wait an extra 10 seconds to make sure the executed script is complete before attempting to run another.
         time.sleep(10)
 
-main()
+test()
