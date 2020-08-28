@@ -1,8 +1,47 @@
-import requests, json
+"""
+A script to add a pool and dataset to a freeNAS server through the api and share the dataset over nfs. Adapted from Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example.
+
+Classes
+-------
+Startup(object)
+	A class used to interact with the api. 
+"""
+import requests #Allows the script to make HTTP requests to the api.
+import json #Allows parsing of json objects before sending to or after recieving from the api.
 class Startup(object):
+  """
+  An object class used to interact with the FreeNAS api.
+  
+  Attributes
+  ----------
+  _hostname : str
+  	The hostname of the server, including its domain.
+  _user : str
+  	The username interacting with the api.
+  _secret : str
+  	The password used to log into account self._user.
+  _ep : str
+  	The url used to make requests of the api.+
+  
+  Methods
+  -------
+  __init__(self: Startup,hostname: str,user: str,secret: str)
+  	Constructor function. Store arguments under self as the same names. Return nothing.
+  request(self: Startup,resource: str,method: str,data=None)
+  	Make a request to the api. Return the response from the server.
+  create_pool(self: Startup)
+  	Create a pool named tank on the storage server. Return the response from the server.
+  create_dataset(self: Startup)
+  	Create a dataset under pool tank named MyShare. Return the response from the server.
+  create_nfs_share(self: Startup)
+  	Shares the dataset MyShare under pool tank over nfs. Allows all users to interact with the dataset as though they had root permissions. Return the response from the server.
+  service_start(self: Startup,name: str)
+  	Start service name on the FreeNAS server. Return the response from the server.
+  """
   def __init__(self, hostname, user, secret):
        """
        Constructor function. Stores the appropriate arguments as properties of self. Returns nothing. Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+       
        args:
            self (Startup): The current instance of Startup.
            hostname (str): the hostname of the storage server, including the domain.
@@ -15,9 +54,8 @@ class Startup(object):
        self._ep = 'http://%s/api/v1.0' % hostname
   def request(self, resource, method='GET', data=None):
        """
-       Takes the current instance of Startup and three strings as arguments. Makes a request where method=method argument and data=data argument of the FreeNAS api with the url
-       stored in self._ep + resource. Returns the response as a json if possible or a string otherwise. Raises a valueError if the response contains an error code.
-       Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+       Take the current instance of Startup and three strings as arguments. Make a request where method=method argument and data=data argument of the FreeNAS api with the url stored in self._ep + resource. Return the response as a dict if possible or a string otherwise. Raises a ValueError if the response contains an error code. Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+       
        args:
             self (Startup): The current instance of Startup.
             resource (str): a string appended to the api's url stored in self._ep. The request is made to this concatenated string.
@@ -42,12 +80,13 @@ class Startup(object):
                return r.text
        raise ValueError(r)
 
-  def create_pool(self)->str:
+  def create_pool(self):
        """
-      Takes the current instance of Startup as an argument. Creates a pool on the appropriate FreeNAS server. Returns the response from the server as a string or dictionary.
-  Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+      Take the current instance of Startup as an argument. Create a pool on the appropriate FreeNAS server. Return the response from the server as a string or dictionary. Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+      
       args:
           self (Startup): the current instance of the Startup class.
+      
       returns:
           str/dict: the response from the server. Type is selected in Startup.requests().
        """
@@ -60,11 +99,12 @@ class Startup(object):
 })
   def create_dataset(self):
        """
-        Takes the current instance of Startup as an argument. Creates a dataset on the appropriate FreeNAS server. Returns the response from the server as a string or dictionary.
-        Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
-        args:
+        Take the current instance of Startup as an argument. Create a dataset on the appropriate FreeNAS server. Return the response from the server as a string or dictionary. Copied from https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+        
+	args:
             self (Startup): The current instance of the Startup class.
-        returns:
+        
+	returns:
             str/dict: The response from the server. Type is selected within Startup.requests().
        """
        #Makes a POST request of the api to create a dataset. 'name' reperesents the name of the new dataset.
@@ -74,11 +114,12 @@ class Startup(object):
 
   def create_nfs_share(self):
        """
-        Takes the current instance of Startup as an argument. Creates an nfs share on the appropriate FreeNAS server. Returns the response from the server as a string or dictionary.
-    Adapted from create_cifs_share found at https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
-        args:
+        Take the current instance of Startup as an argument. Create an nfs share on the appropriate FreeNAS server. Return the response from the server as a string or dictionary. Adapted from create_cifs_share found at https://www.ixsystems.com/documentation/freenas/11.3-RELEASE/api.html#a-more-complex-example
+        
+	args:
              self (Startup): The current instance of the Startup class.
-        returns:
+        
+	returns:
              str/dict: the response from the server. The type is selected within Startup.requests().
        """
        #Makes a POST request of the server to create a new nfs share. nfs_name is the name of the share. nfs_paths is a list of paths to share over nfs.
