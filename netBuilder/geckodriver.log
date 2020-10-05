@@ -130,3 +130,113 @@ JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=15
 A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 1601924202693	Marionette	ERROR	[5] No reply from Marionette:Register
 1601924204029	Marionette	INFO	Stopped listening on port 41722
+1601925991983	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSQXR07"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601925995192	Marionette	INFO	Listening on port 45685
+1601925995296	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601925995342	Marionette	INFO	Stopped listening on port 45685
+1601926016478	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMaIusB"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926019699	Marionette	INFO	Listening on port 39682
+1601926019799	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601926019892	Marionette	INFO	Stopped listening on port 39682
+1601926072098	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilePX63Fo"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926075208	Marionette	INFO	Listening on port 41486
+1601926075309	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601926075377	Marionette	INFO	Stopped listening on port 41486
+1601926091750	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepjPFKZ"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926094905	Marionette	INFO	Listening on port 45191
+1601926094960	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601926095070	Marionette	INFO	Stopped listening on port 45191
+1601926132065	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRyoyIa"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926135198	Marionette	INFO	Listening on port 45185
+1601926135277	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601926135372	Marionette	INFO	Stopped listening on port 45185
+1601926147235	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHdhQtE"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926150469	Marionette	INFO	Listening on port 32823
+1601926150555	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601926150623	Marionette	INFO	Stopped listening on port 32823
+1601926259802	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNq3zfU"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926262948	Marionette	INFO	Listening on port 42305
+1601926263014	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601926301370	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6xJp2e"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926304598	Marionette	INFO	Listening on port 43424
+1601926304682	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ExceptionHandler::GenerateDump cloned child 4551
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1601926309205	Marionette	INFO	Stopped listening on port 43424
+1601926328113	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilev4IlUG"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601926331260	Marionette	INFO	Listening on port 40163
+1601926331327	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601926333932	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+Sleep@chrome://marionette/content/sync.js:283:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+action.dispatch@chrome://marionette/content/action.js:1034:5
+performActions@chrome://marionette/content/listener.js:868:16
+dispatch/</req<@chrome://marionette/content/listener.js:541:14
+dispatch/<@chrome://marionette/content/listener.js:534:15
+1601926333936	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+Sleep@chrome://marionette/content/sync.js:283:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1601926334193	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+Sleep@chrome://marionette/content/sync.js:283:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1601926334215	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+Sleep@chrome://marionette/content/sync.js:283:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1601926334216	Marionette	WARN	TimedPromise timed out after 0 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+Sleep@chrome://marionette/content/sync.js:283:10
+dispatchPause@chrome://marionette/content/action.js:1482:10
+toEvents/<@chrome://marionette/content/action.js:1156:16
+action.dispatchTickActions@chrome://marionette/content/action.js:1060:35
+action.dispatch/chainEvents<@chrome://marionette/content/action.js:1028:20
+1601926344334	Marionette	INFO	Stopped listening on port 40163

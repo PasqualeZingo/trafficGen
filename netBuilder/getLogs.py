@@ -4,12 +4,14 @@ from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
 import time
 from os import system
+from selenium.webdriver.common.action_chains import ActionChains
 
 class Req:
 	
 	def __init__(self):
 		options = Options()
 		options.add_argument("--headless")
+		options.set_preference("altClickSave",True)
 		self.browser = webdriver.Firefox(options=options)
 	def store_page(self):
 		self.source = self.browser.page_source
@@ -29,8 +31,7 @@ class Req:
 		login.click()
 		self.browser.get("https://192.168.1.1/suricata/suricata_alerts.php")
 		download = self.browser.find_element_by_name("download")
-		source = download.getAttribute("href")
-		system(f"wget {source} -P /")
+		ActionChains(self.browser).key_down(Keys.ALT).click(download).key_up(Keys.ALT).perform()
 
 	def close_browser(self):
 		self.browser.close()
