@@ -91,3 +91,42 @@ JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=15
 A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 1601922986243	Marionette	ERROR	[5] No reply from Marionette:Register
 1601922987528	Marionette	INFO	Stopped listening on port 42155
+1601923402836	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileqnQbjM"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601923405854	Marionette	INFO	Listening on port 40157
+1601923405948	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+1601923417436	Marionette	INFO	Stopped listening on port 40157
+1601923645997	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebDblzj"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601923649210	Marionette	INFO	Listening on port 36220
+1601923649311	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+1601923670596	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileK83hX2"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601923673755	Marionette	INFO	Listening on port 36956
+1601923673807	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601923686234	Marionette	INFO	Stopped listening on port 36956
+1601924173614	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTbmRth"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601924176863	Marionette	INFO	Listening on port 35001
+1601924176928	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1601924197502	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewXDz7p"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601924200629	Marionette	INFO	Listening on port 41722
+1601924200713	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1601924202693	Marionette	ERROR	[5] No reply from Marionette:Register
+1601924204029	Marionette	INFO	Stopped listening on port 41722

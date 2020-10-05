@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.keys import Keys
 import time
+from os import system
 
 class Req:
 	
@@ -26,6 +27,10 @@ class Req:
 		password_box.clear()
 		password_box.send_keys("pfsense")
 		login.click()
+		self.browser.get("https://192.168.1.1/suricata/suricata_alerts.php")
+		download = self.browser.find_element_by_name("download")
+		source = download.getAttribute("href")
+		system(f"wget {source} -P /")
 
 	def close_browser(self):
 		self.browser.close()
