@@ -1,0 +1,93 @@
+1601921962037	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileAcxdeV"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601921964469	Marionette	INFO	Listening on port 35456
+1601921964546	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601921974964	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHqaT2h"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601921977520	Marionette	INFO	Listening on port 34002
+1601921977574	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922157252	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileU0RkeX"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922160461	Marionette	INFO	Listening on port 34949
+1601922160565	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922161105	Marionette	INFO	Stopped listening on port 34949
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1601922200585	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileh4e2td"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922203754	Marionette	INFO	Listening on port 42473
+1601922203804	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922204380	Marionette	INFO	Stopped listening on port 42473
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1601922341792	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesntaxw"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922344932	Marionette	INFO	Listening on port 34329
+1601922345006	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922356414	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepAGOgA"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922359438	Marionette	INFO	Listening on port 35653
+1601922359525	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922393900	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileiD3kz6"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922396959	Marionette	INFO	Listening on port 37420
+1601922397013	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922397593	Marionette	INFO	Stopped listening on port 37420
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1601922463374	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHtt4pM"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922466452	Marionette	INFO	Listening on port 37089
+1601922466484	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922466959	Marionette	INFO	Stopped listening on port 37089
+1601922493527	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRPBIF2"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922496667	Marionette	INFO	Listening on port 34232
+1601922496768	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922497200	Marionette	INFO	Stopped listening on port 34232
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1601922528651	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilei7B5h0"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922531761	Marionette	INFO	Listening on port 45251
+1601922531864	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922657200	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiles6Vt7O"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922660316	Marionette	INFO	Listening on port 44727
+1601922660414	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922661006	Marionette	INFO	Stopped listening on port 44727
+1601922838755	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilevuog7p"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922841879	Marionette	INFO	Listening on port 37225
+1601922841968	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922863337	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilez70dQc"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922866468	Marionette	INFO	Listening on port 33798
+1601922866547	Marionette	WARN	TLS certificate errors will be ignored for this session
+1601922882306	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile30wCXm"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922885417	Marionette	INFO	Listening on port 46551
+1601922885516	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1601922887352	Marionette	ERROR	[5] No reply from Marionette:Register
+1601922887726	Marionette	INFO	Stopped listening on port 46551
+1601922979807	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuA5ea1"
+*** You are running in headless mode.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1601922983078	Marionette	INFO	Listening on port 42155
+1601922983120	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://192.168.1.1/widgets/javascript/suricata_alerts.js?v=1593196900, line 99: ReferenceError: suricataupdateDelay is not defined
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1601922986243	Marionette	ERROR	[5] No reply from Marionette:Register
+1601922987528	Marionette	INFO	Stopped listening on port 42155
