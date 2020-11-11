@@ -55,6 +55,9 @@ To add dashboards throught the API, use the add.sh script on a json file contain
 ### addall.sh
 If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
  
+# Copying configurations
+re-configuring the securityonion, FreeNAS, and pfsense virtual machines every time you need a new network would be time-consuming. Instead, use the addDisk/addDisk.sh script save the disk of your configured device. Then, configure the templates by right-clicking them in the appropriate menu in the gns3 GUI, go 
+ 
 # Docker containers
 This directory contains the directories full-email-server and printer-server. These each contain a Dockerfile, an entrypoint script, and a README file describing how the entrypoint script converts a blank linux container to the required server, and how to use the server once it is finished. The documentation also describes how to reconfigure the servers. 
 ## Creating the server images
