@@ -60,7 +60,7 @@ This directory contains the directories full-email-server and printer-server. Th
 ## Creating the server images
 To create docker images from these directories, cd into them and run the command
 
-    docker build . -t <name_of_image>.
+    docker build . -t <name_of_image>
 Use the following command to verify that the image was added:
 
     docker image ls
