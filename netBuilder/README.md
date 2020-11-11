@@ -56,5 +56,13 @@ To add dashboards throught the API, use the add.sh script on a json file contain
 If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
  
 # Docker containers
-This directory contains the directories full-email-server and printer-server. These each contain a Dockerfile, an entrypoint script, and a README file describing how the entrypoint script converts a blank linux container to the required server, and how to use the server once it is finished. The documentation also describes how to reconfigure the servers. To create docker images from these directories, cd into them and run the command
+This directory contains the directories full-email-server and printer-server. These each contain a Dockerfile, an entrypoint script, and a README file describing how the entrypoint script converts a blank linux container to the required server, and how to use the server once it is finished. The documentation also describes how to reconfigure the servers. 
+## Creating the server images
+To create docker images from these directories, cd into them and run the command
+
     docker build . -t <name_of_image>.
+Use the following command to verify that the image was added:
+
+    docker image ls
+## Adding the images to gns3
+To add these images as templates in gns3, click on the "browse end devices" button on the bar on the right (the button with the picture of a desktop monitor). Next, in the popup window, click on the bottom border of the popup, where it says "New template". This will create another popup window. In this window, click the bubble titled "Manually create a new template". This will create another window, which will have categories of options on the left. Select docker at the bottom left, and go to docker containers. In the panel this brings up, click the 'new' button. This will bring up yet another window, with a dropdown menu. Select the image of the name you selected earlier in the dropdown menu. Click next. Choose a name for the gns3 template (this does not need to be the same as the image name). Click next until the window closes. If you press the browse end devices button again, you should see the template you just created, and you can add it to your network by dragging and dropping it in. The email server and printer server may not function properly if they are not connected to a DNS-enabled router.
