@@ -10,6 +10,7 @@ then
     cp "/data/gns3/projects/$pid/project-files/qemu/$nid/hda_disk.qcow2" /usa/lucasd
     cd /usa/lucasd
     mv hda_disk.qcow2 "$3.qcow2"
+    #Again, change /data/ to whereever gns3 is stored in your environment.
     mv "$3.qcow2" /data/gns3/images/QEMU
 else
     echo "Something went wrong in getID.py!"
