@@ -30,5 +30,5 @@ If it prints "Call random duckduckgo query", it will tell all the boxes to query
 # netBuilder
 This directory contains the files needed to create a vitual network. More information in the README within the directory.
 
-#agents
+# agents
 This directory contains the scripts used to actually generate traffic on the network. The scripts are documented in more detail within the code itself.
