@@ -26,3 +26,9 @@ To run the scheduler, simply type the command
     python3 scheduler.py
 
 If it prints "Call random duckduckgo query", it will tell all the boxes to query a random website. The number of these queries made will be stored on each box under "/trafficGen/agents/.queries". If the scheduler prints "Call send Email", each box will send an email to the address info@example.com. These emails will be stored in "/var/mail/vhosts/example.com/info". Finally, if the scheduler prints "Print a dummy file", each box will send a print request to the print server, named cups_pdf in the example_net.py network, and successful "prints" on the virtual printer will be stored in "/home/reciever/PDF". NOTE: this scheduler will currently only work if the example-net.py script is run while a project named "testtest" exists.
+
+# netBuilder
+This directory contains the files needed to create a vitual network. More information in the README within the directory.
+
+#agents
+This directory contains the scripts used to actually generate traffic on the network. The scripts are documented in more detail within the code itself.
