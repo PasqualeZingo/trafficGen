@@ -1,5 +1,5 @@
 # Print Server
-This is a simple print server/virtual printer setup. Like the email server, this assumes that a pfsense router with DNS is set up on the network. The default domain on the brass template will be luked.com.
+This is a simple print server/virtual printer setup. This assumes that a pfsense router with DNS is set up on the network. The default domain on the brass template will be luked.com.
 
 ## Installation
 First, you will need to install the software required for this server to function. Type the following command to install all the prerequisites 
