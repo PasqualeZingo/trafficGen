@@ -6,6 +6,7 @@ then
     python3 getID.py node $1 $2 > tmp.txt
     nid=$(cat tmp.txt)
     rm -f tmp.txt
+    #change the /data/ to whatever the path to your gns3 directory is. Change nothing after that.
     cp "/data/gns3/projects/$pid/project-files/qemu/$nid/hda_disk.qcow2" /usa/lucasd
     cd /usa/lucasd
     mv hda_disk.qcow2 "$3.qcow2"
