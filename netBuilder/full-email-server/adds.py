@@ -1,3 +1,7 @@
+"""
+This script is designed to add usable email addresses to the email server. It adds an address for every ip address for each ip address on the 192.168.1.0 subnet.
+"""
+
 f = open('addresses','r')
 addrs = f.read()
 f.close()
