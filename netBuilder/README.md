@@ -25,9 +25,6 @@ Clients tell the server their hostname when requesting an IP address from the DH
 #### Static DHCP
 Allows mapping clients with a specific name to a specific IP address. Something similar can be achieved through the DHCP Static Mappings for this Interface option under Services > DHCP server, though this will require knowledge of the client's MAC address.
 
-## Network-attached storage server
-A network-attached storage server is used essentially as a private cloud service. This network willl use the FreeNAS operating system for this purpose. The FreeNAS OS stores data in datasets, which are contained in pools. The data can be located on the server itself through a shell within /mnt/\<pool>/\<dataset>. 
-
 ### Setup 
   In order to share data, the server will need to be told to set up a share using the service appropriate for the Operating Systems used by other machines on the network. The freeNAS.py script uses nfs, which is used for UNIX operating systems such as linux. The FreeNAS template on brass already has version 11.3-U4 of the FreeNAS OS installed. It also has a pool, dataset, and share, but these were not saved properly and will not function. As such, you will need to use the netBuilder/freeNAS.py script to set up a working area to store data. To run the script, type the following command.
   
@@ -54,6 +51,9 @@ To add dashboards throught the API, use the add.sh script on a json file contain
 
 ### addall.sh
 If placed in the same directory as add.sh, this script will attempt to add all json files in the current directory to kibana. Non dashboard object json files will also be attempted, but will most likely fail, which will not interupt the script. However, it is recommended that all json files in the directory with this script conatin dashboard objects and associated data, in order to avoid adding other unwanted objects.
+ 
+# Copying configurations
+re-configuring the securityonion, FreeNAS, and pfsense virtual machines every time you need a new network would be time-consuming. Instead, use the addDisk/addDisk.sh script save the disk of your configured device. Then, configure the templates by right-clicking them in the appropriate menu in the gns3 GUI, go to HDD and change the top disk image to whatever you saved the disk as (the third argument to addDisk.sh).
  
 # Docker containers
 This directory contains the directories full-email-server and printer-server. These each contain a Dockerfile, an entrypoint script, and a README file describing how the entrypoint script converts a blank linux container to the required server, and how to use the server once it is finished. The documentation also describes how to reconfigure the servers. 
