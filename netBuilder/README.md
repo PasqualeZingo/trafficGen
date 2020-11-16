@@ -25,9 +25,6 @@ Clients tell the server their hostname when requesting an IP address from the DH
 #### Static DHCP
 Allows mapping clients with a specific name to a specific IP address. Something similar can be achieved through the DHCP Static Mappings for this Interface option under Services > DHCP server, though this will require knowledge of the client's MAC address.
 
-## Network-attached storage server
-A network-attached storage server is used essentially as a private cloud service. This network willl use the FreeNAS operating system for this purpose. The FreeNAS OS stores data in datasets, which are contained in pools. The data can be located on the server itself through a shell within /mnt/\<pool>/\<dataset>. 
-
 ### Setup 
   In order to share data, the server will need to be told to set up a share using the service appropriate for the Operating Systems used by other machines on the network. The freeNAS.py script uses nfs, which is used for UNIX operating systems such as linux. The FreeNAS template on brass already has version 11.3-U4 of the FreeNAS OS installed. It also has a pool, dataset, and share, but these were not saved properly and will not function. As such, you will need to use the netBuilder/freeNAS.py script to set up a working area to store data. To run the script, type the following command.
   
