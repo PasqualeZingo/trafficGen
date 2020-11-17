@@ -90,7 +90,7 @@ If you've done everything correctly, This should save the email to the text file
 ## Send email via email script
 The agents/emailSender.py script from this repository will automatically send an email. By default, it will send an email from "s<the ip address of the box>@example.com" to "info@example.com". It will also attempt to connect to an email server named "studio.lrd.com" by default. To change this to send an email to a different server, or from/to a different email address, you will need to modify the script. The script will contain comments with further instructions on how to do this.
 
-## Troubleshooting
+# Troubleshooting
 rsyslog creates a file in /var/log called syslog, which logs interactions with the postfix server, simplifying troubleshooting. To activate rsyslog, start the rsyslog with the command 
     
     service rsyslog start
