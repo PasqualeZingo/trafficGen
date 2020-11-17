@@ -1,10 +1,22 @@
-# dovecot-conf
+# Files
+Below is a list of files in this directory.
+
+## dovecot-conf
 A directory containing files that configure dovecot.
 
-# postfix-conf
+## postfix-conf
 A directory containing files that configure postfix.
 
-# Email server
+## Dockerfile
+A dockerfile for building an image to host the email server.
+
+## adds.py
+A script to add users to the email server.
+
+## server.sh
+An entrypoint script, which is run on the startup of a container. Creates the email server through the method outlined below. 
+
+# Creating an Email server from a test-client
 This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured. The template on brass will have the default domain luked.com, however, if the email server is named "studio", it will recieve a static ip of 192.168.1.1 and a unique domain of lrd.com. Keep this in mind when telneting into the server.
 
 ## Installation
