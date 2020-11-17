@@ -15,8 +15,9 @@ The default username is admin, and the password is pfsense. There will be a warn
 
 ********
 WARNING
-The devices in this repository are build to assume that there is a router with ip address 192.168.1.1 and domain luked.com. Change the IP or the domain at your own risk!
 ********
+The devices in this repository are build to assume that there is a router with ip address 192.168.1.1 and domain luked.com. Change the IP or the domain at your own risk!
+
 
 ### DNS
 To configure the DNS resolver, click the three lines at the top right corner. In the drop-down menu that appears, click services > DNS resolver. The options you will need to be concerned with are listed below.
