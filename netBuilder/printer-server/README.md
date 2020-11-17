@@ -1,4 +1,13 @@
-# Print Server
+# Files
+The files in this directory are:
+## Dockerfile
+The dockerfile for building a docker image for the print server.
+## cupsd.conf
+A configuration file for cups to recieve outside requests. Do not modify unless you are familiary with cups.
+## server.sh
+The entrypoint script for the image. This is run whenever a container is started. It creates the print server with the method outlined below.
+
+# Creating a Print Server
 This is a simple print server/virtual printer setup. This assumes that a pfsense router with DNS is set up on the network. The default domain on the brass template will be luked.com.
 
 ## Installation
