@@ -1,7 +1,28 @@
 # Directories
-
+This is a description of the contents of each subdirectory of netBuilder. Each one will contain further details.
 ## add-to-kibana
 This contains two scripts for adding dashboards to kibana through the API. This allows you to see the traffic on the network on the Security onion VM (explained below).
+
+## addDisk
+This contains scripts used to find a node in a project and copy its disk to save the setup on the machine. This will only work for QEMU images.
+
+## freeNAS
+This contains a script used to get a FreeNAS machine ready for use.
+
+## full-email-server
+This contains the dockerfile, entrypoint script, and config files required to create a docker image that will host a functional postfix-dovecot email server, which will require authentication to enter.
+
+## printer-server
+This contains the dockerfile, entrypoint script, and config file necessary to run a cups print server and a cups-pdf virtual printer.
+
+## test-client
+This contains the dockerfile and entrypoint script required to set up a client with the software necessary to send emails, print requests, or to share files over the network-attached storage server. Used for debugging, not generating traffic.
+
+## traffic-gen-box
+This contains the dockerfile and entrypoint script for a docker image designed to create traffic on the network. The image created from this directory (see docker containers section) must be named traffic_gen_box for the scheduler.py script to function.
+
+## export.json
+A set of dashboards that, if uploaded to kibana through the api, will track the network traffic.
 
 # Adding QEMU image templates in gns3
 Most of the machines on the virtual network are run on either QEMU or docker. To add a QEMU machine to a gns3 network, either through the API or the GUI, you will need to add a template for it to gns3. To add a template, go to file > new template. Click next, then select the appropriate machine. Download and import the required files for the version you want (most likely the lastest version). With the version selected, click next again. Finally, click finish. You will now be able to access the image through the button on the left corresponding to the category of the machine. 
@@ -11,12 +32,7 @@ In order to generate traffic, you will need to have a virtual network with serve
 
 ## Pfsense config
 To configure pfsense, open a browser on the network connected to it, and type its ip address into the search bar. For the default template on brass, that ip is 192.168.1.1.
-The default username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. Set the domain for the router to luked.com.
-
-
-### WARNING
-The devices in this repository are build to assume that there is a router with ip address 192.168.1.1 and domain luked.com. Change the IP or the domain at your own risk!
-
+The username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. The default domain for the router is luked.com. 
 
 ### DNS
 To configure the DNS resolver, click the three lines at the top right corner. In the drop-down menu that appears, click services > DNS resolver. The options you will need to be concerned with are listed below.
@@ -79,3 +95,4 @@ Use the following command to verify that the image was added:
     docker image ls
 ## Adding the images to gns3
 To add these images as templates in gns3, click on the "browse end devices" button on the bar on the right (the button with the picture of a desktop monitor). Next, in the popup window, click on the bottom border of the popup, where it says "New template". This will create another popup window. In this window, click the bubble titled "Manually create a new template". This will create another window, which will have categories of options on the left. Select docker at the bottom left, and go to docker containers. In the panel this brings up, click the 'new' button. This will bring up yet another window, with a dropdown menu. Select the image of the name you selected earlier in the dropdown menu. Click next. Choose a name for the gns3 template (this does not need to be the same as the image name). Click next until the window closes. If you press the browse end devices button again, you should see the template you just created, and you can add it to your network by dragging and dropping it in. The email server and printer server may not function properly if they are not connected to a DNS-enabled router.
+
