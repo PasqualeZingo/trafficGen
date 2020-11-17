@@ -72,7 +72,7 @@ def getNodeID(name: str,project: str)->str:
 #If the first command line argument is "project":
 if args[0].lower().strip() == "project":
     #get the id of the requested project.
-    pid = getProjectID(args[2])
+    pid = getProjectID(args[1])
     #If the id is not empty:
     if pid:
         #Print it out and exit.
