@@ -14,9 +14,7 @@ To configure pfsense, open a browser on the network connected to it, and type it
 The default username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. Set the domain for the router to luked.com.
 
 ********
---------
 WARNING
---------
 The devices in this repository are build to assume that there is a router with ip address 192.168.1.1 and domain luked.com. Change the IP or the domain at your own risk!
 ********
 
