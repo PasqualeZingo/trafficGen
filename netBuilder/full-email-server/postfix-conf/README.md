@@ -1,5 +1,5 @@
 # Files
-Below there is a list of the files in this directory and a description of their function.
+Below there is a list of the files in this directory and a description of their function. If you wish to reconfigure the email server image, you will need to re-build the image.
 
 ## master.cf
 This contains the services the postfix server will run.
