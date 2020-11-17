@@ -11,9 +11,9 @@ In order to generate traffic, you will need to have a virtual network with serve
 
 ## Pfsense config
 To configure pfsense, open a browser on the network connected to it, and type its ip address into the search bar. For the default template on brass, that ip is 192.168.1.1.
--------
+********
 WARNING
---------
+********
 The devices in this repository are build to assume that there is a router with ip address 192.168.1.1. Change this IP at your own risk!
 
 The username is admin, and the password is pfsense. There will be a warning at the top informing you that the router still has the default username and password; this can be safely ignored on an isolated virtual network. The default domain for the router is luked.com. 
