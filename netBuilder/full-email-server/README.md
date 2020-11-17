@@ -1,3 +1,9 @@
+# dovecot-conf
+A directory containing files that configure dovecot.
+
+# postfix-conf
+A directory containing files that configure postfix.
+
 # Email server
 This is perhaps the most difficult of the three servers to set up and configure. This server will allow the userAgent to send emails via telnet to predefined users after authentication. This tutorial assumes you already have a pfsense router with DNS configured. The template on brass will have the default domain luked.com, however, if the email server is named "studio", it will recieve a static ip of 192.168.1.1 and a unique domain of lrd.com. Keep this in mind when telneting into the server.
 
@@ -23,23 +29,7 @@ to allow postfix to read the files. If you wish to change login_maps, virtual, o
 and then restart postfix with the command
     
     postfix reload 
-If postfix is already shut down, use "postfix start" instead.
-
-Below there is a list of the files in netBuilder/postfix-conf and a description of their function:
-### master.cf
-This contains the services the postfix server will run.
-
-### main.cf
-This contains the bulk of the configuration for the server. It tells postfix who to allow to send email, where to send mail, and what ip addresses can access the SMTP service. The function of all of the configuration options can be found at http://www.postfix.org/documentation.html.
-
-### login_maps
-This contains usernames followed by an indent followed by an email address. When logged in with the username on the right, the user will be able to send mail with the address on the right. The default for this example has two users, info@example.com and sales@example.com, which are mapped to addresses of the same name.
-
-### virtual
-This defines virtual users; in the default config found in the repo, it will cause mail intended for postmaster@example.com to be sent to root. The address on the left is the virtual address, while the user on the right is the user on the machine that will recieve the mail.
-
-### vmailbox
-This file contains email addresses followed by the name of a directory. Email sent to those addresses will be saved in a text file /var/mail/vhosts/<the file name on the right>. Adding a '/' after the directory causes the mail to be stored in /var/mail/vhosts/<the directory on the right>/new. 
+If postfix is already shut down, use "postfix start" instead. 
   
 ## Dovecot configuration
 Once you have set up postfix, you will need to configure dovecot as well. First, run the following sequence of commands: 
@@ -61,23 +51,6 @@ Once you have set up postfix, you will need to configure dovecot as well. First,
   This will copy the config files to the appropriate directories. Dovecot should not require any additional setup; simply run "service dovecot start" to start the dovecot server. The server can be connected to via the command 
   
     telnet localhost 110
-    
-Below is a list of the config files in netBuilder/dovecot-conf and their function. 
-
-### 10-auth.conf
-This file tells dovecot where to find the username and password for logging into the dovecot server.
-
-### 10-logging.conf
-This file tells dovecot where to put its log files. With the settings in this repo, dovecot will send logs to /var/log/dovecot.log and its info logs to /var/log/dovecot-info.log. Modify lines 7 and 8 to change the name or path of the log files.
-
-### 10-master.conf
-This file is where you may add services, IE pop3 or imap servers.
-
-### dovecot.conf
-This file tells dovecot to read the other config files, and the one in this repository creates an auth service.
-
-### passwd
-This file contains the username and password for each account. In this repository, the passwords are stored as plaintext, but dovecot allows for them to be stored as hashes as well. the syntax is \<username>@\<domain>:{\<FORMAT>}\<password>.
 
 ## Manually send an email
 To send an email, you will first need to get the base64 string containing the username and password used to log in. Echo the username and password in the format
