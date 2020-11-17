@@ -1,3 +1,11 @@
+# Directories
+
+## add-to-kibana
+This contains two scripts for adding dashboards to kibana through the API. This allows you to see the traffic on the network on the Security onion VM (explained below).
+
+# Adding QEMU image templates in gns3
+Most of the machines on the virtual network are run on either QEMU or docker. To add a QEMU machine to a gns3 network, either through the API or the GUI, you will need to add a template for it to gns3. To add a template, go to file > new template. Click next, then select the appropriate machine. Download and import the required files for the version you want (most likely the lastest version). With the version selected, click next again. Finally, click finish. You will now be able to access the image through the button on the left corresponding to the category of the machine. 
+
 # Network setup
 In order to generate traffic, you will need to have a virtual network with servers that the useragent can interact with. Currently, these consist of a print server, an email server, and a network attached storage server. This tutorial explains how to create these servers on a gns3 network. You will need to have docker installed on the machine running the network. 
 
