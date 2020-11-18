@@ -1,3 +1,16 @@
+# Files
+This directory contains the following files.
+## agents
+A directory containing scripts designed to generate traffic on a virtual network.
+## netBuilder
+A directory containing the necessary files and instructions to build a virtual network on gns3
+## .gitignore
+This file tells git to ignore some files.
+## runall.py
+This script is used to run a script on all docker images named traffic_gen_box. Must be run by the server hosting the network.
+## scheduler.py
+A script that will periodically use the runall.py script to run a random script from agents on all the docker images named traffic_gen_box to generate traffic.
+
 # trafficGen
 This is a mono repo containing everything needed to operate and develop on the virtualized network within brass.
 ## Prereqs
