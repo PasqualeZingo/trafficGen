@@ -1,13 +1,13 @@
 # Files
 This directory contains the following files.
 ## agents
-A directory containing scripts designed to generate traffic on a virtual network.
+A directory containing scripts designed to generate traffic on a virtual network. The scripts are documented in more detail within the code itself.
 ## netBuilder
-A directory containing the necessary files and instructions to build a virtual network on gns3
+A directory containing the necessary files and instructions to build a virtual network on gns3. More information in the README within the directory.
 ## .gitignore
 This file tells git to ignore some files.
-## runall.py
-This script is used to run a script on all docker images named traffic_gen_box. Must be run by the server hosting the network.
+# runall.py
+A python module containing functions that allow other scripts to run executable scripts in docker containers. More details in the documentation within the script itself.
 ## scheduler.py
 A script that will periodically use the runall.py script to run a random script from agents on all the docker images named traffic_gen_box to generate traffic.
 
@@ -30,18 +30,10 @@ Our VM image is hosted on google drive which can be downloaded here. #TODO inser
 * UserAgent
 * ML 
 
-# runall.py
-A python module containing functions that allow other scripts to run executable scripts in docker containers. More details in the documentation within the script itself.
-
-# Scheduler
+# Scheduler usage
 To run the scheduler, simply type the command 
     
     python3 scheduler.py
 
 If it prints "Call random duckduckgo query", it will tell all the boxes to query a random website. The number of these queries made will be stored on each box under "/trafficGen/agents/.queries". If the scheduler prints "Call send Email", each box will send an email to the address info@example.com. These emails will be stored in "/var/mail/vhosts/example.com/info". Finally, if the scheduler prints "Print a dummy file", each box will send a print request to the print server, named cups_pdf in the example_net.py network, and successful "prints" on the virtual printer will be stored in "/home/reciever/PDF". NOTE: this scheduler will currently only work if the example-net.py script is run while a project named "testtest" exists.
 
-# netBuilder
-This directory contains the files needed to create a vitual network. More information in the README within the directory.
-
-# agents
-This directory contains the scripts used to actually generate traffic on the network. The scripts are documented in more detail within the code itself.
