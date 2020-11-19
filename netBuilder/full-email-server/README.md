@@ -8,9 +8,14 @@ This server will allow you to send email to addresses s+<ip address address from
 ## Manually send an email
 To send an email, you will first need to get the base64 string containing the username and password used to log in. Echo the username and password in the format
 
-    \000<username@example.com>\000<password>
-    
-and pipe into a program to convert into base 64. Make sure to use the -n and -e options on the echo command to remove the trailing newline and escape the \000's. Now type
+    \000<username>@example.com\000<password>
+For the accounts on the default image, the password will always be password. So to get the authentication string type the following command:
+     
+     echo -ne "\000<username>@example.com\000password" | openssl base64
+The email server itself will also contain a script in /usr/bin/local called getAuth which will return the string needed for authentication from the username:
+
+     getAuth <username>
+ Once you have the authentication string, type
 
     telnet localhost 587
 from the server itself, or type 
@@ -20,8 +25,8 @@ to send an email remotely. The default domain for a pfsense template on brass sh
 
     ehlo there 
     AUTH PLAIN <string from earlier> 
-    MAIL FROM:<sender@example.com> 
-    RCPT TO:<reciever@example.com>
+    MAIL FROM:<sender_username>@example.com 
+    RCPT TO:<reciever_username>@example.com
     data
     <Type the body of the email here>
     .
