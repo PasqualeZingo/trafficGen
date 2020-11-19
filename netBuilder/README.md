@@ -65,8 +65,8 @@ If placed in the same directory as add.sh, this script will attempt to add all j
  
 # Copying configurations
 re-configuring the securityonion, FreeNAS, and pfsense virtual machines every time you need a new network would be time-consuming. Instead, use the addDisk/addDisk.sh script save the disk of your configured device. Then, configure the templates by right-clicking them in the appropriate menu in the gns3 GUI, go to HDD and change the top disk image to whatever you saved the disk as (the third argument to addDisk.sh).
- 
-
+## FreeNAS
+note that this image will have two disks, but its directory will contain only one disk image. Following the steps above will still allow you to skip the installation process, however, it will not save pools or datasets you create. Thus, you will need to use the script in freeNAS to create new ones each time. See the documetation in freeNAS to learn more.
 
 # Directories
 This is a description of the contents of each subdirectory of netBuilder. Each one will contain further details.
