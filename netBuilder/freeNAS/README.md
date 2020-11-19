@@ -2,7 +2,7 @@
 A network-attached storage server is used essentially as a private cloud service. This network willl use the FreeNAS operating system for this purpose. The FreeNAS OS stores data in datasets, which are contained in pools. The data can be located on the server itself through a shell within /mnt/\<pool>/\<dataset>. 
 
 ## Getting the image
-Within the gns3 GUI, go to file > new template. With the first option selected, click next. Under the guests dropdown menu, select the FreeNAS image. Make sure the 'Install the appliance on the main server' option is selected on the next screen. Click next. Click next on the next page. Download the files required for the latest version of the FreeNAS image. Import them, and select the version.  
+View the 'Adding QEMU image templates in gns3' section in the documentation of the netBuilder directory.
 
 ## Installation
 First, boot up a router. Next, start the FreeNAS image (make sure it is connected to the rest of the network through a switch!). On the first prompt, simply press enter. Select the disk ada0 with spacebar and press enter, except for the password section, in which you must first set the password to toor. continue pressing enter on each prompt until the computer starts installing the OS. Finally, Wait until the first prompt reappears and select the reboot option.
@@ -17,4 +17,4 @@ To generate traffic, you should only need to interact with the image through the
 Copy whatever file you want to store to /mnt. When you are done, type 
 
      umount /mnt
-to unmount the dataset. Any files you upload will appear in /mnt for all computers that have the dataset mounted. If you need to reconfigure the image for whatever reason, enter a browser on the network and type in the ip address of the FreeNAS box to interact with the server in a user-friendly way.
+to unmount the dataset. Any files you upload will appear in /mnt for all computers that have the dataset mounted. If you need to reconfigure the server for whatever reason, enter a browser on the network and type in the ip address of the FreeNAS box to interact with the server in a user-friendly way.
